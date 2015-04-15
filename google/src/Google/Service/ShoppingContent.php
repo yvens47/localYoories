@@ -64,7 +64,11 @@ class Google_Service_ShoppingContent extends Google_Service
         'accounts',
         array(
           'methods' => array(
-            'custombatch' => array(
+            'authinfo' => array(
+              'path' => 'accounts/authinfo',
+              'httpMethod' => 'GET',
+              'parameters' => array(),
+            ),'custombatch' => array(
               'path' => 'accounts/batch',
               'httpMethod' => 'POST',
               'parameters' => array(),
@@ -690,6 +694,19 @@ class Google_Service_ShoppingContent extends Google_Service
  */
 class Google_Service_ShoppingContent_Accounts_Resource extends Google_Service_Resource
 {
+
+  /**
+   * Returns information about the authenticated user. (accounts.authinfo)
+   *
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_ShoppingContent_AccountsAuthInfoResponse
+   */
+  public function authinfo($optParams = array())
+  {
+    $params = array();
+    $params = array_merge($params, $optParams);
+    return $this->call('authinfo', array($params), "Google_Service_ShoppingContent_AccountsAuthInfoResponse");
+  }
 
   /**
    * Retrieves, inserts, updates, and deletes multiple Merchant Center
@@ -1566,6 +1583,32 @@ class Google_Service_ShoppingContent_AccountAdwordsLink extends Google_Model
   }
 }
 
+class Google_Service_ShoppingContent_AccountIdentifier extends Google_Model
+{
+  protected $internal_gapi_mappings = array(
+  );
+  public $aggregatorId;
+  public $merchantId;
+
+
+  public function setAggregatorId($aggregatorId)
+  {
+    $this->aggregatorId = $aggregatorId;
+  }
+  public function getAggregatorId()
+  {
+    return $this->aggregatorId;
+  }
+  public function setMerchantId($merchantId)
+  {
+    $this->merchantId = $merchantId;
+  }
+  public function getMerchantId()
+  {
+    return $this->merchantId;
+  }
+}
+
 class Google_Service_ShoppingContent_AccountShipping extends Google_Collection
 {
   protected $collection_key = 'services';
@@ -2358,6 +2401,34 @@ class Google_Service_ShoppingContent_AccountUser extends Google_Model
   public function getEmailAddress()
   {
     return $this->emailAddress;
+  }
+}
+
+class Google_Service_ShoppingContent_AccountsAuthInfoResponse extends Google_Collection
+{
+  protected $collection_key = 'accountIdentifiers';
+  protected $internal_gapi_mappings = array(
+  );
+  protected $accountIdentifiersType = 'Google_Service_ShoppingContent_AccountIdentifier';
+  protected $accountIdentifiersDataType = 'array';
+  public $kind;
+
+
+  public function setAccountIdentifiers($accountIdentifiers)
+  {
+    $this->accountIdentifiers = $accountIdentifiers;
+  }
+  public function getAccountIdentifiers()
+  {
+    return $this->accountIdentifiers;
+  }
+  public function setKind($kind)
+  {
+    $this->kind = $kind;
+  }
+  public function getKind()
+  {
+    return $this->kind;
   }
 }
 
@@ -3305,6 +3376,7 @@ class Google_Service_ShoppingContent_DatafeedStatus extends Google_Collection
   public $itemsTotal;
   public $itemsValid;
   public $kind;
+  public $lastUploadDate;
   public $processingStatus;
   protected $warningsType = 'Google_Service_ShoppingContent_DatafeedStatusError';
   protected $warningsDataType = 'array';
@@ -3349,6 +3421,14 @@ class Google_Service_ShoppingContent_DatafeedStatus extends Google_Collection
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setLastUploadDate($lastUploadDate)
+  {
+    $this->lastUploadDate = $lastUploadDate;
+  }
+  public function getLastUploadDate()
+  {
+    return $this->lastUploadDate;
   }
   public function setProcessingStatus($processingStatus)
   {
@@ -4206,6 +4286,8 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public $adwordsLabels;
   public $adwordsRedirect;
   public $ageGroup;
+  protected $aspectsType = 'Google_Service_ShoppingContent_ProductAspect';
+  protected $aspectsDataType = 'array';
   public $availability;
   public $availabilityDate;
   public $brand;
@@ -4225,6 +4307,11 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public $description;
   protected $destinationsType = 'Google_Service_ShoppingContent_ProductDestination';
   protected $destinationsDataType = 'array';
+  public $displayAdsId;
+  public $displayAdsLink;
+  public $displayAdsSimilarIds;
+  public $displayAdsTitle;
+  public $displayAdsValue;
   public $energyEfficiencyClass;
   public $expirationDate;
   public $gender;
@@ -4328,6 +4415,14 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public function getAgeGroup()
   {
     return $this->ageGroup;
+  }
+  public function setAspects($aspects)
+  {
+    $this->aspects = $aspects;
+  }
+  public function getAspects()
+  {
+    return $this->aspects;
   }
   public function setAvailability($availability)
   {
@@ -4456,6 +4551,46 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public function getDestinations()
   {
     return $this->destinations;
+  }
+  public function setDisplayAdsId($displayAdsId)
+  {
+    $this->displayAdsId = $displayAdsId;
+  }
+  public function getDisplayAdsId()
+  {
+    return $this->displayAdsId;
+  }
+  public function setDisplayAdsLink($displayAdsLink)
+  {
+    $this->displayAdsLink = $displayAdsLink;
+  }
+  public function getDisplayAdsLink()
+  {
+    return $this->displayAdsLink;
+  }
+  public function setDisplayAdsSimilarIds($displayAdsSimilarIds)
+  {
+    $this->displayAdsSimilarIds = $displayAdsSimilarIds;
+  }
+  public function getDisplayAdsSimilarIds()
+  {
+    return $this->displayAdsSimilarIds;
+  }
+  public function setDisplayAdsTitle($displayAdsTitle)
+  {
+    $this->displayAdsTitle = $displayAdsTitle;
+  }
+  public function getDisplayAdsTitle()
+  {
+    return $this->displayAdsTitle;
+  }
+  public function setDisplayAdsValue($displayAdsValue)
+  {
+    $this->displayAdsValue = $displayAdsValue;
+  }
+  public function getDisplayAdsValue()
+  {
+    return $this->displayAdsValue;
   }
   public function setEnergyEfficiencyClass($energyEfficiencyClass)
   {
@@ -4784,6 +4919,41 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public function getWarnings()
   {
     return $this->warnings;
+  }
+}
+
+class Google_Service_ShoppingContent_ProductAspect extends Google_Model
+{
+  protected $internal_gapi_mappings = array(
+  );
+  public $aspectName;
+  public $destinationName;
+  public $intention;
+
+
+  public function setAspectName($aspectName)
+  {
+    $this->aspectName = $aspectName;
+  }
+  public function getAspectName()
+  {
+    return $this->aspectName;
+  }
+  public function setDestinationName($destinationName)
+  {
+    $this->destinationName = $destinationName;
+  }
+  public function getDestinationName()
+  {
+    return $this->destinationName;
+  }
+  public function setIntention($intention)
+  {
+    $this->intention = $intention;
+  }
+  public function getIntention()
+  {
+    return $this->intention;
   }
 }
 
@@ -5136,6 +5306,7 @@ class Google_Service_ShoppingContent_ProductStatusDataQualityIssue extends Googl
   public $fetchStatus;
   public $id;
   public $location;
+  public $severity;
   public $timestamp;
   public $valueOnLandingPage;
   public $valueProvided;
@@ -5172,6 +5343,14 @@ class Google_Service_ShoppingContent_ProductStatusDataQualityIssue extends Googl
   public function getLocation()
   {
     return $this->location;
+  }
+  public function setSeverity($severity)
+  {
+    $this->severity = $severity;
+  }
+  public function getSeverity()
+  {
+    return $this->severity;
   }
   public function setTimestamp($timestamp)
   {

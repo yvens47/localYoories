@@ -7,12 +7,15 @@
  */
 
 require_once "autoload.php";
+
+;
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
 
 $data  = ($videos->videoIds() );
 $pagination = new Pagination($data);
+
 
 ?>
 
@@ -119,7 +122,7 @@ $pagination = new Pagination($data);
                         <div class="form-group">
 
                             <div class="col-sm-10">
-                                <input type="search" class="form-control block-form-search" id="inputPassword" placeholder="filter">
+                                <input type="search" class="form-control block-form-search" id="inputPassword" placeholder="search ">
                             </div>
                         </div>
                     </form>
@@ -141,16 +144,24 @@ $pagination = new Pagination($data);
 
 <?php
 
-$n = iterator_to_array($pagination->getPaginData());
-$chunk = array_chunk($n, 4);
+ //echo $pagination->total();
+//print_r($pagination->paginate());
+$chunks =  array_chunk(iterator_to_array($pagination->getPaginData()),4);
 
-$chunk = array_chunk($n, 4);
-foreach ($chunk as $key=> $chuns) {
-    echo "<div class=\"row content\" style='margin:0'>";
-    foreach ($chuns as $key =>$ch) {
-        $youtube->video($ch['vidid']);
-    }
+foreach($chunks as $chunk){
+    echo "<div class=\"row\">";
+     foreach ($chunk as $key => $ch){
+         //$youtube->video($ch['vidid']);
+        // echo $key;
+
+         $id  = $chunk[$key]['vidid'];
+         $youtube->video($id);
+
+
+     }
+
     echo "</div>";
+    echo "<hr/>";
 }
 
 

@@ -17,7 +17,7 @@
 include_once "templates/base.php";
 session_start();
 
-require_once realpath(dirname(__FILE__) . '/../autoload.php');
+require_once realpath(dirname(__FILE__) . '/../src/Google/autoload.php');
 
 /************************************************
   We'll setup an empty 20MB file to upload.
@@ -109,11 +109,9 @@ if ($client->getAccessToken()) {
   fclose($handle);
 }
 echo pageHeader("File Upload - Uploading a large file");
-if (
-    $client_id == '<YOUR_CLIENT_ID>'
-    || $client_secret == '<YOUR_CLIENT_SECRET>'
-    || $redirect_uri == '<YOUR_REDIRECT_URI>') {
+if (strpos($client_id, "googleusercontent") == false) {
   echo missingClientSecretsWarning();
+  exit;
 }
 ?>
 <div class="box">
