@@ -57,13 +57,23 @@ class GoogleApi {
             $descr = $item['snippet']['description'];
             $image = $item['snippet']['thumbnails']['high']['url'];
             $channelTitle = $item['snippet']['channelTitle'];
-            echo "<div class='tends>";
-            echo $channelTitle."<br/>";
-            echo  "<img src='$image'/>";
-            echo $title ."<br/>";
-            echo $descr;
-            echo "<hr/>";
-            echo "</div>";
+
+
+          echo  "<div class=\"trends thumbnail\">
+                            <a href=\"video.php?id=$id\">
+                            <img src=\"$image\" alt=\"LA MEDAILLE (FULL HAITIAN MOVIE)\"></a> <p class=\"name\">La medaille </p>
+                <div>
+
+                <ul class=\"p-icons\">
+                    <li><i class=\"glyphicon glyphicon-play\"></i></li>
+                    <li><i class=\"glyphicon glyphicon-eye-open\"></i></li>
+                    <li><i class=\"glyphicon glyphicon-plus\"></i></li>
+                    <li> <i class=\"glyphicon glyphicon-thumbs-up\"></i></li>
+            </ul>
+                   <p class=\"description\">$descr</p>
+
+                </div>
+                                </div>";
 
         }
 
