@@ -30,8 +30,10 @@ class Database {
           return $q;
     }
 
-    function all($table_name){
-        $sql = "select * from $table_name";
+    function all($type){
+
+        $sql = "select * from posts where type='$type'";
+
 
         $query = $this->query($sql);
         while($row = mysqli_fetch_assoc($query))

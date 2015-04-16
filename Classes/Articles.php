@@ -10,6 +10,22 @@ require_once 'Database.php';
 require_once 'Post.php';
 class Articles {
     private  $type;
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
     private $db;
 
     function __construct($type){
@@ -65,34 +81,16 @@ class Articles {
     function displayArticles(){
 
         if($this->type == 'posts'){
+            $this->setType('article');
             $this->posts();
 
 
         }
         else if($this->type == 'how-to'){
 
-            $data = ($this->db->all('how'));
-           // $data = $articles->displayArticles();
-            foreach ($data as $article) {
-                $param = key($article);
+            $this->setType('how-to');
+            $this->posts();
 
-                $id = $article['id'];
-                $title =  $article['title'];
-                $body =  substr($article['body'],0, 100);
-                echo "
-                            <div class='p-wrap'>
-                               <a href=\"article.php?id=$id\"><img  class='post-img' src='http://yoories.com/pic.png' /></a>
-                                <div><h2><a href=\"article.php?id=$id\">$title</a></h2>
-                                <p>$body</p></div>
-                                <div class='icns'>
-                                <i class='pull-right glyphicon glyphicon-thumbs-up'></i>
-                                <i class='pull-right glyphicon glyphicon-thumbs-down'></i>
-                                <i class='pull-right glyphicon glyphicon-share'></i>
-                                <i class='pull-right glyphicon glyphicon-bell'></i>
-                                </div>
-                                </div>
-                            ";
-            }
         }else{
 
             //header('location: Articles.php?type=posts');
@@ -128,7 +126,7 @@ class Articles {
     public function posts()
     {
 //print_r($this->db->all('posts'));
-        $data = ($this->db->all('posts'));
+        $data = ($this->db->all($this->type));
         // $data = $articles->displayArticles();
         foreach ($data as $article) {
             $id = $article['post_id'];
