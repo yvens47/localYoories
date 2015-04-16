@@ -16,6 +16,41 @@ class GoogleApi {
     private $client;
     private $service;
     private $db;
+    private $id;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    private $title;
+    private  $description;
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
     function __construct() {
         $this->db = new Database('Yoories');
 
@@ -35,11 +70,45 @@ class GoogleApi {
         return $id;
     }
     function vidInfo($id){
+        $options = array('id'=>$id, );
+
+        $youtube = $this->service->videos->listVideos('id, snippet', $options);
+        $desc =  $youtube['items'][0]['snippet']['description'];
+        $this->setDescription($desc);
+        print_r($desc);
+        $this->setId($id);
+
 
         echo "<iframe width=\"560\" height=\"315\" id=\"player\"
         src=\"https://www.youtube.com/embed/{$id}?autohide=1&enablejsapi=1&showinfo=0\"
        class=\"embed-responsive-item\" frameborder=\"0\" allowfullscreen ></iframe>";
     }
+
+     function comments(){
+         $options = array(
+             'videoId'=>$this->getId(),
+             'textFormat' => 'plainText',
+             );
+
+
+         $comments = $this->service->commentThreads->listCommentThreads('id, snippet',$options);
+
+         //print_r($comments);
+
+         foreach($comments as $comment){
+            // print_r($comment);
+             $c = $comment['snippet']['topLevelComment']['snippet']['textDisplay'];
+             $authorDisplayName =$comment['snippet']['topLevelComment']['snippet']['authorDisplayName'];
+             $authorDisplayImage =$comment['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'];
+             echo "<div class='comment'>";
+             echo "<img src='$authorDisplayImage'>'";
+             echo "<p> $authorDisplayName</p>";
+              echo "<p> $c </p>";
+
+             echo "</div>";
+         }
+
+     }
 
 
     function video($id){

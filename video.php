@@ -21,6 +21,7 @@ $youtube = new GoogleApi();
             <div class="col-md-8 views-main">
                 <div class="embed-responsive embed-responsive-16by9">
                     <?php $youtube->vidInfo($id) ; ?>
+
                 </div>
                 <div class="i-wrapper">
                     <ul class='p-icons'>
@@ -30,6 +31,25 @@ $youtube = new GoogleApi();
                         <li> <i class="glyphicon glyphicon-thumbs-up"></i></li>
                     </ul>
                 </div>
+                <div class="desc">
+
+                    <i class="glyphicon glyphicon-pencil launch-desc" data-toggle="modal" data-target="#myModal" ></i></a>
+                    <?php
+                    if(($youtube->getDescription() =="")){
+                         echo "does not have a description yet Please add A description for this video";
+                    }else{
+
+                        echo $youtube->getDescription();
+
+                    }
+
+                    ?>
+                    <hr/>
+                    <?php
+                    $youtube->comments();
+                    ?>
+                </div>
+
 
 
 

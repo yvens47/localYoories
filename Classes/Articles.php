@@ -65,32 +65,9 @@ class Articles {
     function displayArticles(){
 
         if($this->type == 'posts'){
+            $this->posts();
 
-           //print_r($this->db->all('posts'));
-            $data = ($this->db->all('posts'));
-            // $data = $articles->displayArticles();
-            foreach ($data as $article) {
-                $id = $article['post_id'];
-                $title =  $article['title'];
-                $param = key($article);
-                $body =  substr($article['body'],0, 100);
-                echo "
-                            <div class='p-wrap'>
-                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='http://yoories.com/pic.png' /></a>
-                                <div><h2><a href=\"article.php?post_id=$id\">$title</a></h2>
-                                <p> $body</p>
-                                </div>
-                                <div class='icns'>
-                                <i class='pull-right glyphicon glyphicon-thumbs-up'></i>
-                                <i class='pull-right glyphicon glyphicon-thumbs-down'></i>
-                                <i class='pull-right glyphicon glyphicon-share'></i>
-                                <i class='pull-right glyphicon glyphicon-bell'></i>
-                                <i class='pull-right glyphicon glyphicon-comment'></i>
-                                </div>
-                            </div>
-                            ";
-            }
-            $this->db->connect()->close();
+
         }
         else if($this->type == 'how-to'){
 
@@ -117,6 +94,11 @@ class Articles {
                             ";
             }
         }else{
+
+            //header('location: Articles.php?type=posts');
+
+            $this->posts();
+
             $post = $this->db->all('posts');
             $how = $this->db->all('how');
 
@@ -129,6 +111,7 @@ class Articles {
 
     }
     function  edit($id){
+        //$this->posts();
 
         $sql  ="select * from posts where post_id ='$id'";
         $query = $this->db->query($sql);
@@ -140,6 +123,35 @@ class Articles {
 
     function  howTos(){
 
+    }
+
+    public function posts()
+    {
+//print_r($this->db->all('posts'));
+        $data = ($this->db->all('posts'));
+        // $data = $articles->displayArticles();
+        foreach ($data as $article) {
+            $id = $article['post_id'];
+            $title = $article['title'];
+            $param = key($article);
+            $body = substr($article['body'], 0, 100);
+            echo "
+                            <div class='p-wrap'>
+                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='http://yoories.com/pic.png' /></a>
+                                <div><h2><a href=\"article.php?post_id=$id\">$title</a></h2>
+                                <p> $body</p>
+                                </div>
+                                <div class='icns'>
+                                <i class='pull-right glyphicon glyphicon-thumbs-up'></i>
+                                <i class='pull-right glyphicon glyphicon-thumbs-down'></i>
+                                <i class='pull-right glyphicon glyphicon-share'></i>
+                                <i class='pull-right glyphicon glyphicon-bell'></i>
+                                <i class='pull-right glyphicon glyphicon-comment'></i>
+                                </div>
+                            </div>
+                            ";
+        }
+        $this->db->connect()->close();
     }
 
 }

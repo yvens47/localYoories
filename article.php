@@ -60,7 +60,8 @@ $pagination = new Pagination($data);
                     <div class="post-view">
                 <h1><?php echo $article['title']; ?></h1>
                         <span class="badge">35 views</span>
-                <span><a href="editArticle.php?id=<?php echo $article['post_id'] ;?>"><i class="glyphicon glyphicon-pencil"></i></a> </span>
+                <span><a href="editArticle.php?id=<?php echo $article['post_id'] ;?>">
+                        <i class="glyphicon glyphicon-pencil"></i></a> </span>
                 <img src=""/>
                 <p><?php echo $article['body']; ?></p>
                 </div>

@@ -157,6 +157,20 @@ ul.latest li img {
     float: none;
     margin: 0 auto;
 }
+.desc {
+    padding: 0;
+    margin: 10px 0;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+}
+
+.comment {
+    height: auto;
+    overflow: hidden;
+    /* background: green; */
+    margin-bottom: 10px;
+    border-bottom: solid #A09898 1px;
+}
 
 
 .small-margin {

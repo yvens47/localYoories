@@ -5,6 +5,10 @@
 
 $(document).ready(function () {
 
+    $(".launch-desc").click(function(){
+
+    });
+
     var app = new App();
     $(".alert").hide();
     $(".login").submit(function (e) {

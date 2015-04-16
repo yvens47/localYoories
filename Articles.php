@@ -10,7 +10,11 @@ require_once "autoload.php";
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
-$type = $_GET['type'];
+$type = "posts";
+if(isset($_GET['type'])){
+    $type = $_GET['type'];
+}
+
 $articles = new Articles($type);
 $data = ($videos->videoIds());
 $pagination = new Pagination($data);
@@ -57,8 +61,18 @@ $pagination = new Pagination($data);
         </div>
             <?php
 
+              if(isset($_GET)){
+                  $articles->displayArticles();
+              }
+             else{
+                // header('location: index.php');
 
-                        $articles->displayArticles();
+             }
+
+
+
+
+
 
 
 
