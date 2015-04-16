@@ -8,8 +8,9 @@
 
 
 require_once "google/src/Google/autoload.php";
-class GoogleApi {
 
+class GoogleApi
+{
 
 
     private $youtube_object;
@@ -17,6 +18,23 @@ class GoogleApi {
     private $service;
     private $db;
     private $id;
+    private $countComments;
+
+    /**
+     * @return mixed
+     */
+    public function getCountComments()
+    {
+        return $this->countComments;
+    }
+
+    /**
+     * @param mixed $countComments
+     */
+    public function setCountComments($countComments)
+    {
+        $this->countComments = $countComments;
+    }
 
     /**
      * @return mixed
@@ -33,8 +51,9 @@ class GoogleApi {
     {
         $this->id = $id;
     }
+
     private $title;
-    private  $description;
+    private $description;
 
     /**
      * @return mixed
@@ -51,7 +70,9 @@ class GoogleApi {
     {
         $this->description = $description;
     }
-    function __construct() {
+
+    function __construct()
+    {
         $this->db = new Database('Yoories');
 
         $this->client = new Google_Client();
@@ -62,18 +83,23 @@ class GoogleApi {
         $this->service = new Google_Service_YouTube($this->client);
 
     }
-    function showsAll(){
-        $sql ="select * from videos";
+
+    function showsAll()
+    {
+        $sql = "select * from videos";
         $query = $this->db->query($sql);
-        while( $row = mysqli_fetch_assoc($query)){
-            $id[] = $row['vidid'];            }
+        while ($row = mysqli_fetch_assoc($query)) {
+            $id[] = $row['vidid'];
+        }
         return $id;
     }
-    function vidInfo($id){
-        $options = array('id'=>$id, );
+
+    function vidInfo($id)
+    {
+        $options = array('id' => $id,);
 
         $youtube = $this->service->videos->listVideos('id, snippet', $options);
-        $desc =  $youtube['items'][0]['snippet']['description'];
+        $desc = $youtube['items'][0]['snippet']['description'];
         $this->setDescription($desc);
         print_r($desc);
         $this->setId($id);
@@ -84,51 +110,62 @@ class GoogleApi {
        class=\"embed-responsive-item\" frameborder=\"0\" allowfullscreen ></iframe>";
     }
 
-     function comments(){
-         $options = array(
-             'videoId'=>$this->getId(),
-             'textFormat' => 'plainText',
-             );
+    function comments()
+    {
+        $options = array(
+            'videoId' => $this->getId(),
+            'textFormat' => 'plainText',
+        );
 
 
-         $comments = $this->service->commentThreads->listCommentThreads('id, snippet',$options);
+        $comments = $this->service->commentThreads->listCommentThreads('id, snippet', $options);
 
-         //print_r($comments);
+        //print_r($comments);
+        $this->setCountComments(count($comments));
 
-         foreach($comments as $comment){
+        //echo $this->getCountComments()." coomments";
+
+        foreach ($comments as $comment) {
             // print_r($comment);
-             $c = $comment['snippet']['topLevelComment']['snippet']['textDisplay'];
-             $authorDisplayName =$comment['snippet']['topLevelComment']['snippet']['authorDisplayName'];
-             $authorDisplayImage =$comment['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'];
-             echo "<div class='comment'>";
-             echo "<img src='$authorDisplayImage'>'";
-             echo "<p> $authorDisplayName</p>";
-              echo "<p> $c </p>";
+            $c = $comment['snippet']['topLevelComment']['snippet']['textDisplay'];
+            $authorDisplayName = $comment['snippet']['topLevelComment']['snippet']['authorDisplayName'];
+            $authorDisplayImage = $comment['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'];
+            echo "<div class='comment'>";
+            echo "<div class=\"comment-pic pull-left\"><img src='$authorDisplayImage'></div>";
+            echo "<div class='p-comment'><p class='name'> $authorDisplayName</p>";
+            echo "<p> $c </p>
+                    <ul class='p-icons'>
 
-             echo "</div>";
-         }
+                        <li><i class=\"glyphicon glyphicon-plus\"></i></li>
+                        <li> <i class=\"glyphicon glyphicon-thumbs-up\"></i></li>
+                    </ul>
+                    </div>";
 
-     }
+            echo "</div>";
+        }
+
+    }
 
 
-    function video($id){
-        $options = array('id'=>$id, );
+    function video($id)
+    {
+        $options = array('id' => $id,);
         $youtube = $this->service->videos->listVideos('id, snippet', $options);
 
         $items = $youtube['items'];
         //print_r($items);
-       // $id = $items['snippet']['id'];
+        // $id = $items['snippet']['id'];
 
 
-        foreach($items as $item){
-            $id  =  ($item['id']);
+        foreach ($items as $item) {
+            $id = ($item['id']);
             $title = $item['snippet']['title'];
             $descr = $item['snippet']['description'];
             $image = $item['snippet']['thumbnails']['high']['url'];
             $channelTitle = $item['snippet']['channelTitle'];
 
 
-          echo  "<div class=\"trends thumbnail\">
+            echo "<div class=\"trends thumbnail\">
                             <a href=\"video.php?id=$id\">
                             <img src=\"$image\" alt=\"LA MEDAILLE (FULL HAITIAN MOVIE)\"></a> <p class=\"name\">La medaille </p>
                 <div>

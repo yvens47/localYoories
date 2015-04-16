@@ -16,7 +16,21 @@ body{
 .form-wrap {
     margin-top: 60px;
 }
+.post-comment-btn {
+    /*display: none;*/
+}
+.p-comment
+{
+    float: left;
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+}
 
+.p-comment .name {
+    color: rgb(111, 154, 190);
+    font-weight: bold;
+}
 
 body,html{
     height: 100%;
@@ -93,8 +107,18 @@ img.post-img {
 }
 .comment-box {
     margin-bottom: 10px;
-    background: #eee;
+
     padding: 10px 10px;
+    height:auto;
+    overflow: hidden;
+
+}
+
+.comment-counts {
+    /* border-bottom: solid 1px #eee; */
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
 }
 
 .lmenu {
@@ -169,8 +193,24 @@ ul.latest li img {
     overflow: hidden;
     /* background: green; */
     margin-bottom: 10px;
-    border-bottom: solid #A09898 1px;
+    border-bottom: dashed #E8E8E8 1px;
 }
+
+.comment-box-wrap {
+    width: 88%;
+    float: left;
+}
+
+.comment-icon {
+    width: 50px;
+    /* background: green; */
+    height: 50px;
+    margin-right: 10px;
+    padding: 1px 1px;
+    border: solid 1px #544949;
+    width: 10%;
+}
+
 
 
 .small-margin {
@@ -328,6 +368,11 @@ textarea#body {
 
 .no-inline {
 
+}
+.comment-pic {
+    margin-right: 10px;
+    width: auto;
+    overflow: hidden;
 }
 
 .top-search-wrap {

@@ -45,6 +45,30 @@ $youtube = new GoogleApi();
 
                     ?>
                     <hr/>
+                    <div class="comment-box">
+                        <div class="comment-counts">
+                            All Comments <span class="label label-danger">34</span>
+                        </div>
+                        <div class="comment-icon pull-left"></div>
+                        <div class="comment-box-wrap">
+                            <form>
+                                <div class="form-group">
+                                   <!--<label for="exampleInputEmail1">Email address</label>-->
+
+                                    <textarea name="youtube_comment" class="yt-comment form-control">
+
+                                    </textarea>
+                                </div>
+
+                               <div class="post-comment-btn">
+                                   <div class="pull-left">
+                                       post on facebook
+                                   </div>
+                                   <button type="submit" class="btn btn-default pull-right ">Submit</button>
+                               </div>
+                            </form>
+                        </div>
+                    </div>
                     <?php
                     $youtube->comments();
                     ?>
@@ -55,17 +79,9 @@ $youtube = new GoogleApi();
 
                 <hr>
 
-
-
-
-                <div class="comments">
-
-                    <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid" data-width="100%" data-numposts="5" data-colorscheme="light" data-href="http://yoories.com/view.php?id=GcZsEJSWc8w" fb-xfbml-state="rendered"><span style="height: 176px; width: 750px;"><iframe id="fc230f014" name="f25405bd6" scrolling="no" title="Facebook Comments Plugin" class="fb_ltr" src="https://www.facebook.com/plugins/comments.php?api_key=612412602139631&amp;channel_url=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F6Dg4oLkBbYq.js%3Fversion%3D41%23cb%3Df22fc5b318%26domain%3Dyoories.com%26origin%3Dhttp%253A%252F%252Fyoories.com%252Ff2bc5edc84%26relation%3Dparent.parent&amp;colorscheme=light&amp;href=http%3A%2F%2Fyoories.com%2Fview.php%3Fid%3DGcZsEJSWc8w&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;skin=light&amp;version=v2.3&amp;width=100%25" style="border: none; overflow: hidden; height: 176px; width: 750px;"></iframe></span></div>
-
-                </div>
             </div>
             <div class="col-md-4 views-left">
-                <ul class="most-popular">
+               <!-- <ul class="most-popular">
                     <li>
                         <a href="video.php?id=DA7sDnn6AmA">
                             <img src="https://i.ytimg.com/vi/DA7sDnn6AmA/hqdefault.jpg" alt="Haitian reporters be like">
@@ -102,7 +118,40 @@ $youtube = new GoogleApi();
                         </a>
                         <p class="ltitle"> Funny ass video Haitian dogiein lol.east side</p>
 
-                    </li>            </ul>
+                    </li>            </ul>-->
+
+                <div class="social-login">
+
+                    <div class="panel">
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Login</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">Sign in</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="panel-footer">Google+ is Recommended</div>
+                        </div>
+                        </div>
+
+                </div>
                 <h2> Most Popular</h2>
                 <div class=" recom">
                     <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg">
