@@ -53,6 +53,9 @@
                     <li><a href="add.php">Add</a></li>
                 </ul>
                 </li>
+                <li><a href="#contact">forum</a></li>
+                <li><a href="#contact">MarketPlace</a></li>
+                <li><a href="#contact">Contribute</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

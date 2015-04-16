@@ -169,16 +169,18 @@ foreach($chunks as $chunk){
 
 
 <div class="row">
+    <?php
+     $i = isset($_GET['page']) ? $_GET['page'] : 1; ?>
             <nav>
                 <ul class="pagination">
                     <li>
-                        <a href="#" aria-label="Previous">
+                        <a href="<?php $_SERVER['PHP_SELF'] ?>?page=<?php echo $i-1?> " aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
                     <?php $pagination->link(); ?>
                     <li>
-                        <a href="#" aria-label="Next">
+                        <a href="<?php $_SERVER['PHP_SELF'] ?>?page=<?php echo $i+1?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

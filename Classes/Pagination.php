@@ -19,7 +19,7 @@ class Pagination
     {
         $this->page = Zend_Paginator::factory($data);
 
-        $this->param = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $this->param = isset($_GET['page']) ? (int)$_GET['page'] : 2;
         $this->page->setCurrentPageNumber($this->param);
         $this->pages = $this->page->count();
 
