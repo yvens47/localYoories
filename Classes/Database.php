@@ -36,9 +36,15 @@ class Database {
 
 
         $query = $this->query($sql);
-        while($row = mysqli_fetch_assoc($query))
-            $rows[] = $row;
-        return $rows;
+        if(mysqli_num_rows($query)> 0){
+            while($row = mysqli_fetch_assoc($query))
+                $rows[] = $row;
+            return $rows;
+        }else{
+            echo "not exist";
+        }
+
+
     }
 
     function assocResult(){

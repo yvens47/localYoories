@@ -91,7 +91,13 @@ class Articles {
             $this->setType('how-to');
             $this->posts();
 
-        }else{
+        }else if($this->type='tips'){
+            $this->setType('tips');
+            $this->posts();
+        }
+
+
+        else{
 
             //header('location: Articles.php?type=posts');
 

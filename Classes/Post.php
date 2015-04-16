@@ -11,6 +11,8 @@ class Post {
     private $title;
     private $table = "posts";
     private $db;
+    private $id;
+    private $body;
 
 
     public function __construct(){
