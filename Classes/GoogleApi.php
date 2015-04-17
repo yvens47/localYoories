@@ -136,7 +136,7 @@ class GoogleApi
             echo "<p> $c </p>
                     <ul class='p-icons'>
 
-                        <li><i class=\"glyphicon glyphicon-plus\"></i></li>
+                        <li><i class=\"glyphicon glyphicon-thumbs-down\"></i></li>
                         <li> <i class=\"glyphicon glyphicon-thumbs-up\"></i></li>
                     </ul>
                     </div>";

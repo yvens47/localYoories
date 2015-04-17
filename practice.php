@@ -1,7 +1,35 @@
-<script src="jquery.js"></script>
-<script src="mediaelement-and-player.min.js"></script>
-<link rel="stylesheet" href="mediaelementplayer.css" />
 
-<video width="640" height="360" id="player1" preload="none">
-    <source type="video/youtube" src="http://www.youtube.com/watch?v=nOEw9iiopwI" />
-</video>
+<?php
+
+require_once 'autoload.php';
+
+
+/*if(isset($_POST)){
+
+print_r($_FILES);
+
+    if(!empty($_FILES) ) {
+        $image = new ImageUpload($_FILES);
+        if($image->checkSize()){
+            if($image->checkExtension()){
+                $image->saveImage("Uploads");
+            }
+            else{
+                die("extennsion doe not");
+            }
+
+        }else{
+            echo "file is too big";
+        }
+
+
+    }
+}*/
+
+
+?>
+
+<form method="post"  action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
+    <input type="file" name="image" multiple>
+    <input type="submit">
+</form>

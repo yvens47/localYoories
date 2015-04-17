@@ -8,8 +8,12 @@
 
 require_once 'Database.php';
 require_once 'Post.php';
+
+
+
 class Articles {
     private  $type;
+
 
     /**
      * @return mixed
@@ -67,6 +71,31 @@ class Articles {
         }
 
 
+
+
+    }
+
+    function comments($id){
+
+
+        $sql = "select * from Comments where postid = '$id'";
+        $query = $this->db->query($sql);
+        echo $this->db->isEmpty($query);
+        if($this->db->isEmpty($query)){
+            $c = ($this->db->assocResult($query));
+
+            return $c;
+        }
+
+        else{
+              return "no comment yet";
+        }
+
+
+
+
+
+        //$comment = Factory::Comment($id, $title, $body, $postid);
 
 
     }

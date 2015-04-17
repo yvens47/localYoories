@@ -8,6 +8,10 @@
 require_once '../autoload.php';
 $error = array('title'=> "Title cannot bet empty", "body"=>"Please go back and enter some content");
 
+require_once '../Config.php';
+
+
+
 if(isset($_POST)){
 
     if(empty($_POST['title'])){
@@ -17,14 +21,28 @@ if(isset($_POST)){
     else if(empty($_POST['body'])){
         echo $error['body'];
     }
-    else{
+   else if(!empty($_FILES) ) {
+
         $post = new Post();
-        print_r($post);
+        echo $_SERVER['DOCUMENT_ROOT'];
         $p = array('title'=> $_POST['title'], 'body'=>$_POST['body'],"type"=>"articles" );
-
         $post->add($p);
+       $image = new ImageUpload($_FILES);
+       if($image->checkSize()){
+           if($image->checkExtension()){
+               $image->saveImage("Uploads");
+           }
+           else{
+               die("extennsion doe not");
+           }
+
+       }else{
+           echo "file is too big";
+       }
 
 
-    }
+    }else{
+
+   }
 
 }

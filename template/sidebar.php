@@ -17,7 +17,7 @@
         <ul class="nav nav-pills nav-stacked">
             <li class="active"><a href="?type=posts">Videos  <span class="badge">4</span></a> </li>
             <li class="active"><a href="?type=how-to">How-tos</a> </li>
-            <li class="active"><a href="index.php">Videos</a> </li>
+            <li class="active"><a href="?type=tips">Tip and Tricks</a> </li>
             <li class="active"><a href="?type=joke">Jokes</a> </li>
         </ul>
     </div>

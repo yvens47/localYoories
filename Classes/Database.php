@@ -47,8 +47,33 @@ class Database {
 
     }
 
-    function assocResult(){
+    function assocResult($query)
+    {
 
+
+        while ($rows = mysqli_fetch_assoc($query)) {
+            $results[] = $rows;
+
+
+        }
+return $results;
+
+
+    }
+
+    /**
+     * @param $query
+     * @return bool
+     */
+    public function isEmpty($query)
+    {
+        $isgreater = false;
+        if (mysqli_num_rows($query) > 0) {
+            $isgreater =true;
+        }
+
+
+        return $isgreater;
     }
 
 

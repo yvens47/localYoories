@@ -26,6 +26,8 @@ $articles = new Articles('');
 $data = ($videos->videoIds());
 $pagination = new Pagination($data);
 
+$id = $_GET['post_id'];
+
 ?>
 
 <?php require_once 'template/header.php' ?>
@@ -75,6 +77,15 @@ $pagination = new Pagination($data);
 
 
             ?>
+            <div class="">
+                <?php  if (is_array($articles->comments($id))){  ?>
+                <?php print_r($articles->comments($id)) ?>
+
+                <?php }else{  ?>
+                <?php  echo $articles->comments($id); } ?>
+
+
+            </div>
             <div class="suggestions">
                 <h2>You might also like these</h2>
             </div>

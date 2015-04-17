@@ -47,7 +47,7 @@
 <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="site.js"></script>
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
 
 </body>
 </html>
