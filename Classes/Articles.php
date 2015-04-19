@@ -129,6 +129,11 @@ class Articles {
 
 
     }
+
+    function countViews(){
+
+        echo $_SERVER['REMOTE_ADDR'];
+    }
     function  edit($id){
         //$this->posts();
 

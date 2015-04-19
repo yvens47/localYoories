@@ -9,6 +9,14 @@ $(document).ready(function () {
 
     });
 
+    $(".search").click(function(){
+
+        console.log("focus")
+        $(this).animate({
+            width: "200px"
+        }, 300)
+    })
+
     var app = new App();
     $(".alert").hide();
     $(".login").submit(function (e) {

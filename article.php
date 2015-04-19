@@ -61,7 +61,7 @@ $id = $_GET['post_id'];
             if($articles->isArray($article)){ ?>
                     <div class="post-view">
                 <h1><?php echo $article['title']; ?></h1>
-                        <span class="badge">35 views</span>
+                        <span class="badge"><?php echo $articles->countViews() ?> </span>
                 <span><a href="editArticle.php?id=<?php echo $article['post_id'] ;?>">
                         <i class="glyphicon glyphicon-pencil"></i></a> </span>
                 <img src=""/>

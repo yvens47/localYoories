@@ -13,7 +13,7 @@ class ImageUpload {
     private $type;
     private $size;
     private $tmp_name;
-    const MAX_SIZE = 8000;
+    const MAX_SIZE = 80000;
     private $error;
 
     public $extensiton = array('image/png','image/jpg','image/jpeg','image/gif');
@@ -129,6 +129,7 @@ class ImageUpload {
     function saveImage($directory){
 
         $dir = ROOTPATH."/".$directory."/";
+        $isSave = false;
 
 
         if(!file_exists($dir.$this->getName())){

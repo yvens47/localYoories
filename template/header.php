@@ -62,12 +62,12 @@
                 </ul>
                 </li>
                 <li><a href="#contact">forum</a></li>
-                <li><a href="#contact">MarketPlace</a></li>
+                <li><a href="Marketplace/index.php">MarketPlace</a></li>
                 <li><a href="#contact">Contribute</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="navbar-form-round" placeholder="Search">
+                    <input type="text" class="form-control search" id="navbar-form-round" placeholder="Search">
                 </div>
 
             </form>
