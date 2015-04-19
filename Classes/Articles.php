@@ -51,12 +51,12 @@ class Articles {
         $type =  $s[0];
         $sql ="select * from ";
         if($type =='post_id'){
-            $id = $_GET['post_id'];
+            $id = (int)$_GET['post_id'];
             $sql .= "posts where post_id ='$id'";
 
         }
         else{
-            $id = $_GET['id'];
+            $id = (int) $_GET['id'];
             $sql .= "how where id='$id'";
         }
 
@@ -67,7 +67,7 @@ class Articles {
             return mysqli_fetch_assoc($q);
 
         }else{
-            echo "posts does not found";
+            return 0;
         }
 
 
@@ -88,7 +88,7 @@ class Articles {
         }
 
         else{
-              return "no comment yet";
+              return "Be the First to Add a Comment";
         }
 
 
@@ -109,36 +109,22 @@ class Articles {
 
     function displayArticles(){
 
-        if($this->type == 'posts'){
-            $this->setType('article');
-            $this->posts();
 
+        switch($this->getType()){
+            case "how-to":
+               $this->posts();
+                break;
+            case "jokes":
+                $this->posts();
+                break;
+            case 'tips':
+                $this->posts();
+                break;
+            default:
+                $this->setType('article');
+                $this->posts();
+                break;
 
-        }
-        else if($this->type == 'how-to'){
-
-            $this->setType('how-to');
-            $this->posts();
-
-        }else if($this->type='tips'){
-            $this->setType('tips');
-            $this->posts();
-        }
-
-
-        else{
-
-            //header('location: Articles.php?type=posts');
-
-            $this->posts();
-
-            $post = $this->db->all('posts');
-            $how = $this->db->all('how');
-
-            $data = array_merge($post, $how);
-
-
-            return $data;
         }
 
 
@@ -158,9 +144,39 @@ class Articles {
 
     }
 
+    function similar(){
+        $type = $this->getType();
+        $id = (int) $_GET['post_id'];
+
+        $sql = "select title from posts where post_id !='$id' limit 3";
+
+
+        $query = $this->db->query($sql);
+        //
+        if(mysqli_num_rows($query) > 1 ){
+            $rows = array();
+            while($row = mysqli_fetch_assoc($query)){
+                $rows[] = $row;
+            }
+
+            return($rows);
+
+        }
+
+
+        //print_r($rows);
+
+
+    }
+
+    function categories(){
+        $sql = "select distinct(type) from posts";
+        $query = $this->db->query($sql);
+    }
+
     public function posts()
     {
-//print_r($this->db->all('posts'));
+
         $data = ($this->db->all($this->type));
         // $data = $articles->displayArticles();
         foreach ($data as $article) {
@@ -170,7 +186,7 @@ class Articles {
             $body = substr($article['body'], 0, 100);
             echo "
                             <div class='p-wrap'>
-                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='http://yoories.com/pic.png' /></a>
+                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='Uploads/thumb.jpg' /></a>
                                 <div><h2><a href=\"article.php?post_id=$id\">$title</a></h2>
                                 <p> $body</p>
                                 </div>

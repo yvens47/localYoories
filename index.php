@@ -35,7 +35,7 @@ $pagination = new Pagination($data);
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="http://yoories.com/pic.png" alt="...">
+                            <img src="Uploads/mortal.jpg" alt="...">
                             <div class="carousel-caption">
                                 ...
                             </div>
@@ -60,7 +60,7 @@ $pagination = new Pagination($data);
                     </a>
                 </div></div>
             <div class="col-md-4">
-                <div class="panel panel-primary" style="height:318px">
+                <div class="panel panel-primary" style="height:360px">
                     <div class="panel-heading"><h3 class="panel-title">Latest Movies</h3></div>
                     <div class="panel-body">
                         <ul class="latest">
@@ -69,6 +69,12 @@ $pagination = new Pagination($data);
 
                                 <p class="ltitle"> title for the latest video in the database display here</p>
                             </li>
+                            <li>
+                                <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
+
+                                <p class="ltitle"> title for the latest video in the database display here</p>
+                            </li>
+
                             <li>
                                 <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
 

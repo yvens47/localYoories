@@ -1,35 +1,41 @@
-
 <?php
 
-require_once 'autoload.php';
+
+if($this->type =='posts'){
+    $this->setType('article');
+    $this->posts();
 
 
-/*if(isset($_POST)){
+}
+else if($this->type == 'how-to'){
 
-print_r($_FILES);
+    $this->setType('how-to');
+    $this->posts();
 
-    if(!empty($_FILES) ) {
-        $image = new ImageUpload($_FILES);
-        if($image->checkSize()){
-            if($image->checkExtension()){
-                $image->saveImage("Uploads");
-            }
-            else{
-                die("extennsion doe not");
-            }
+}else if($this->type='jokes'){
+    echo $this->type;
 
-        }else{
-            echo "file is too big";
-        }
-
-
-    }
-}*/
+    //$this->setType('jokes');//
+    echo $this->getType();
+    $this->posts();
+}else if($this->type='tips'){
+    $this->setType('tips');
+    $this->posts();
+}
 
 
-?>
+else{
 
-<form method="post"  action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
-    <input type="file" name="image" multiple>
-    <input type="submit">
-</form>
+    //header('location: Articles.php?type=posts');
+
+    $this->posts();
+
+    $post = $this->db->all('posts');
+    $how = $this->db->all('how');
+
+    $data = array_merge($post, $how);
+
+
+    return $data;
+}
+

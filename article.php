@@ -67,9 +67,20 @@ $id = $_GET['post_id'];
                 <img src=""/>
                 <p><?php echo $article['body']; ?></p>
                 </div>
+                <div class="suggestions">
+                    <h2>You might also like these</h2>
+                    <?php  print_r($articles->similar()); ?>
+                </div>
             <?php   }
             else{
-                echo $article;
+
+                echo "<h2> Oops... Unfortunalety we could not find the Articles</h2>";
+
+               echo ' <div class="suggestions">
+                <h2>Check these out</h2>
+            </div>';
+
+
             }
 
 
@@ -77,18 +88,29 @@ $id = $_GET['post_id'];
 
 
             ?>
+
+
             <div class="">
-                <?php  if (is_array($articles->comments($id))){  ?>
-                <?php print_r($articles->comments($id)) ?>
+                <?php if($article != 0){ ?>
+                    <?php
+                        $host = $_SERVER["HTTP_HOST"]."".$_SERVER['REQUEST_URI'];
+
+
+
+                    ?>
+
+                    <div class="fb-comments" data-href="<?php echo $host ?>"
+                         data-numposts="15" data-colorscheme="light"></div>
+
+
 
                 <?php }else{  ?>
-                <?php  echo $articles->comments($id); } ?>
 
 
+               <?php  }?>
+
             </div>
-            <div class="suggestions">
-                <h2>You might also like these</h2>
-            </div>
+
 
 
         </div>

@@ -25,6 +25,14 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=770930286318690";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="wrapper">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,8 +55,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articles<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="Articles.php?type=how-to">How-tos</a></li>
-                    <li><a href="#">Tips-Trics</a></li>
-                    <li><a href="#">Jokes</a></li>
+                    <li><a href="Articles.php?type=tips">Tips-Trics</a></li>
+                    <li><a href="Articles.php?type=jokes">Jokes</a></li>
                     <li class="divider"></li>
                     <li><a href="add.php">Add</a></li>
                 </ul>

@@ -156,6 +156,10 @@ ul.latest {
     background: #eee;
     height: 130px;
 }
+
+.comment_slog {
+    margin-top: 5px;
+}
 .ads {
     border: solid rgb(126, 114, 114) 1px;
     height: 230px;
@@ -170,7 +174,7 @@ ul.latest li {
     box-shadow: 2px 1px 2px 1px #CBC9C9;
 }
 ul.latest li img {
-    width: 100px;
+    width: 90px;
     float: left;
     margin: 3px 10px 2px 0;
     padding: 3px 4px;

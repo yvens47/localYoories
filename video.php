@@ -8,8 +8,17 @@
 
 require_once "autoload.php";
 $page = new Page("welcome");
- $id = $_GET['id'];
+$id = $_GET['id'];
+echo empty($id);
+
+if(empty($id)){
+    header("location: index.php");
+}
 $youtube = new GoogleApi();
+
+if(!$youtube->isVideoFound($id)){
+     header("location: index.php");
+}
 
 ?>
 

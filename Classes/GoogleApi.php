@@ -94,20 +94,39 @@ class GoogleApi
         return $id;
     }
 
+    function isVideoFound($id){
+
+        $isfound = true;
+        $options = array('id' => $id,);
+        $youtube = $this->service->videos->listVideos('id, snippet', $options);
+
+        if (!$youtube['pageInfo']['totalResults'] >0 )
+                $isfound = false;
+
+
+        return  $isfound;
+
+    }
+
     function vidInfo($id)
     {
-        $options = array('id' => $id,);
 
-        $youtube = $this->service->videos->listVideos('id, snippet', $options);
-        $desc = $youtube['items'][0]['snippet']['description'];
-        $this->setDescription($desc);
-        print_r($desc);
-        $this->setId($id);
+            $options = array('id' => $id,);
+
+            $youtube = $this->service->videos->listVideos('id, snippet', $options);
+            $desc = $youtube['items'][0]['snippet']['description'];
+            $this->setDescription($desc);
+            print_r($desc);
+            $this->setId($id);
 
 
-        echo "<iframe width=\"560\" height=\"315\" id=\"player\"
+            echo "<iframe width=\"560\" height=\"315\" id=\"player\"
         src=\"https://www.youtube.com/embed/{$id}?autohide=1&enablejsapi=1&showinfo=0\"
        class=\"embed-responsive-item\" frameborder=\"0\" allowfullscreen ></iframe>";
+
+
+
+
     }
 
     function comments()

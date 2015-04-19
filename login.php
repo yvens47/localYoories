@@ -1,4 +1,4 @@
-
+<?php ob_start(); ?>
 <?php
 
 session_start();
@@ -19,6 +19,7 @@ if($user->isLogin()){
     <div class="row">
         <div class="form-wrap">
             <?php  require_once "Form/login.php"?>
+            <?php $user->gooleLogin() ?>
 
             </div>
     </div>

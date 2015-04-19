@@ -8,13 +8,28 @@
 
 
 require_once "Database.php";
+require_once './google/src/Google/autoload.php';
+require_once 'Credentials.php';
 
 class User extends Database
 {
 
+    private  $service ;
+    private $client;
+
     function __construct()
     {
         parent::__construct();
+
+        $this->client = new Google_Client();
+        $this->client->setClientSecret(CLIENT_SECRET);
+        $this->client->setClientId(CLIENT_ID);
+        $this->client->setDeveloperKey(DEVELOPER_KEY);
+        $this->client->setRedirectUri(REDIRECT);
+        $this->client->setApplicationName("Yoories");
+        $scropes = array("https://www.googleapis.com/auth/youtube");
+
+        $this->client->setScopes($scropes);
     }
 
     function login($email, $password)
@@ -99,4 +114,53 @@ class User extends Database
 
     }
 
+    function gooleLogin(){
+
+
+
+       // print_r($this->client);
+        $google_auth = new Google_Auth_OAuth2($this->client);
+        if(isset($_GET['code'])){
+            $this->client->authenticate($_GET['code']);
+            $_SESSION['token'] = $this->client->getAccessToken();
+            $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+            header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+
+        }
+
+        if(isset($_SESSION['token']) && $_SESSION['token']){
+            $this->client->setAccessToken($_SESSION['token']);
+
+            echo "<pre/>";
+            print_r($this->client);
+
+
+            echo "Logged in <a href='logout.php'>Logout</a>";
+
+        }else{
+            $url =$this->client->createAuthUrl();
+
+            echo "<a href=\"$url\">Login with Google</a>";
+        }
+
+        if($this->client->getAccessToken()){
+            echo  " yes";
+            $_SESSION['access_token'] = $this->client->getAccessToken();
+            $token_data = $this->client->verifyIdToken()->getAttributes();
+
+            print_r($token_data);
+        }
+
+
+
+
+
+
+
+
+
+    }
+
 }
+
+
