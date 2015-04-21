@@ -8,6 +8,7 @@
 
 
 require_once "google/src/Google/autoload.php";
+require_once 'Credentials.php';
 
 class GoogleApi
 {
@@ -78,9 +79,17 @@ class GoogleApi
         $this->client = new Google_Client();
 
         $this->client->setApplicationName("Yoories");
-        $this->client->setDeveloperKey("AIzaSyD4UsaxhiSdIIPS6wsVcWkCRxNw4qRvz-c");
+
+        $this->client->setClientId(CLIENT_ID);
+        $this->client->setClientSecret(CLIENT_SECRET);
+        $this->client->setDeveloperKey(DEVELOPER_KEY);
+        $this->client->setApprovalPrompt('force');
+        $scope = array("https://www.googleapis.com/auth/youtube.force-ssl","https://www.googleapis.com/auth/youtube");
+        $this->client->setScopes($scope);
         // parent::__construct($this->client);
+
         $this->service = new Google_Service_YouTube($this->client);
+
 
     }
 
@@ -126,6 +135,37 @@ class GoogleApi
 
 
 
+
+    }
+
+    function postComment($vidid,$comment){
+        # Insert channel comment by omitting videoId.
+        # Create a comment snippet with text.
+        $commentSnippet = new Google_Service_YouTube_CommentSnippet();
+        $commentSnippet->setTextOriginal(
+            'my comment'
+        );
+
+        # Create a top-level comment with snippet.
+        $topLevelComment = new Google_Service_YouTube_Comment();
+        $topLevelComment->setSnippet($commentSnippet);
+
+        # Create a comment thread snippet with channelId and top-level comment.
+        $commentThreadSnippet = new Google_Service_YouTube_CommentThreadSnippet();
+        $commentThreadSnippet->setTopLevelComment($topLevelComment);
+
+        # Create a comment thread with snippet.
+        $commentThread = new Google_Service_YouTube_CommentThread();
+        $commentThread->setSnippet($commentThreadSnippet);
+
+        // Call the YouTube Data API's commentThreads.insert method to create a comment.
+        $channelCommentInsertResponse = $this->service->commentThreads->insert('snippet', $commentThread);
+
+
+        # Insert video comment
+        $commentThreadSnippet->setVideoId($vidid);
+        // Call the YouTube Data API's commentThreads.insert method to create a comment.
+        $videoCommentInsertResponse = $this->service->commentThreads->insert('snippet', $commentThread);
 
     }
 

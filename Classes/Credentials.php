@@ -6,7 +6,7 @@
  * Time: 4:19 AM
  */
 
-define("CLIENT_ID", "1081761800802-d0t3qs3392vg2jb9ermqj7jbhajbuuga.apps.googleusercontent.com");
-define("CLIENT_SECRET", "CI8W-80h8FpR4acfnxF4Yg_-");
-define("DEVELOPER_KEY","AIzaSyDbMprYzEVCSqCxHhzDYEAcLyWGXho17CU");
+define("CLIENT_ID", "44193794641-abj3qvopnj3un1n6sb67l2mi37ohbtme.apps.googleusercontent.com");
+define("CLIENT_SECRET", "A2C0xFclVcvqiuxpTzG5i1Mn");
+define("DEVELOPER_KEY","AIzaSyB-KYO_dddQS90exjsmMl6AJjBzXQwM0IA");
 define("REDIRECT","http://localhost/Yoories/login.php");

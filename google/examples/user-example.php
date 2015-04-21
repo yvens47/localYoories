@@ -24,9 +24,9 @@ require_once realpath(dirname(__FILE__) . '/../src/Google/autoload.php');
   the redirect URI is to this page, e.g:
   http://localhost:8080/user-example.php
  ************************************************/
- $client_id = '<YOUR_CLIENT_ID>';
- $client_secret = '<YOUR_CLIENT_SECRET>';
- $redirect_uri = '<YOUR_REDIRECT_URI>';
+ $client_id = '44193794641-abj3qvopnj3un1n6sb67l2mi37ohbtme.apps.googleusercontent.com';
+ $client_secret = 'A2C0xFclVcvqiuxpTzG5i1Mn';
+ $redirect_uri = 'http://localhost/Yoories/login.php';
 
 /************************************************
   Make an API request on behalf of a user. In

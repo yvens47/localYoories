@@ -61,7 +61,10 @@ $id = $_GET['post_id'];
             if($articles->isArray($article)){ ?>
                     <div class="post-view">
                 <h1><?php echo $article['title']; ?></h1>
-                        <span class="badge"><?php echo $articles->countViews() ?> </span>
+                        <span class="badge">
+                            <?php  echo  $articles->countViews($id) == 1 ? $articles->countViews($id)." view": "views" ?>
+
+                        </span>
                 <span><a href="editArticle.php?id=<?php echo $article['post_id'] ;?>">
                         <i class="glyphicon glyphicon-pencil"></i></a> </span>
                 <img src=""/>
@@ -69,7 +72,14 @@ $id = $_GET['post_id'];
                 </div>
                 <div class="suggestions">
                     <h2>You might also like these</h2>
-                    <?php  print_r($articles->similar()); ?>
+                    <ul>
+                        <?php  foreach($articles->similar() as $similar): ?>
+                      <li> <?php echo $similar['title'] ?> </li>
+
+                    <?php endforeach; ?>
+
+                    </ul>
+
                 </div>
             <?php   }
             else{

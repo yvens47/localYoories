@@ -5,6 +5,7 @@
  * Date: 4/12/15
  * Time: 10:10 AM
  */
+session_start();
 
 require_once "autoload.php";
 $page = new Page("welcome");
@@ -60,11 +61,12 @@ if(!$youtube->isVideoFound($id)){
                         </div>
                         <div class="comment-icon pull-left"></div>
                         <div class="comment-box-wrap">
-                            <form>
+                            <form method="post" action="post_comment.php">
                                 <div class="form-group">
                                    <!--<label for="exampleInputEmail1">Email address</label>-->
+                                    <input type="hidden" name="vidid"  value="<?php  echo $id ?>">
 
-                                    <textarea name="youtube_comment" class="yt-comment form-control">
+                                    <textarea class="yt-comment form-control" name="comment">
 
                                     </textarea>
                                 </div>

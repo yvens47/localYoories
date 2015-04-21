@@ -323,6 +323,7 @@ class Google_Auth_OAuth2 extends Google_Auth_Abstract
           'OAuth2 access token refresh with Signed JWT assertion grants.'
       );
     } else {
+
       $this->client->getLogger()->info('OAuth2 access token refresh');
     }
 

@@ -26,10 +26,11 @@ class User extends Database
         $this->client->setClientId(CLIENT_ID);
         $this->client->setDeveloperKey(DEVELOPER_KEY);
         $this->client->setRedirectUri(REDIRECT);
+        $this->client->setApprovalPrompt('force');
         $this->client->setApplicationName("Yoories");
-        $scropes = array("https://www.googleapis.com/auth/youtube");
 
-        $this->client->setScopes($scropes);
+        $scope = array("https://www.googleapis.com/auth/userinfo.email","https://www.googleapis.com/auth/plus.me");
+        $this->client->setScopes($scope);
     }
 
     function login($email, $password)
@@ -120,9 +121,15 @@ class User extends Database
 
        // print_r($this->client);
         $google_auth = new Google_Auth_OAuth2($this->client);
+        if (isset($_REQUEST['logout'])) {
+            // Clear the access token from the session storage.
+            unset($_SESSION['token']);
+        }
         if(isset($_GET['code'])){
             $this->client->authenticate($_GET['code']);
             $_SESSION['token'] = $this->client->getAccessToken();
+            //$this->client->refreshToken($_SESSION['token']);
+
             $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
             header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 
@@ -131,11 +138,11 @@ class User extends Database
         if(isset($_SESSION['token']) && $_SESSION['token']){
             $this->client->setAccessToken($_SESSION['token']);
 
-            echo "<pre/>";
-            print_r($this->client);
-
 
             echo "Logged in <a href='logout.php'>Logout</a>";
+
+
+
 
         }else{
             $url =$this->client->createAuthUrl();
@@ -144,11 +151,13 @@ class User extends Database
         }
 
         if($this->client->getAccessToken()){
-            echo  " yes";
+
+
             $_SESSION['access_token'] = $this->client->getAccessToken();
             $token_data = $this->client->verifyIdToken()->getAttributes();
 
             print_r($token_data);
+
         }
 
 

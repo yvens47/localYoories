@@ -10,6 +10,7 @@ session_start();
 if(isset($_SESSION['userid']) || isset($_SESSION['token'])){
 
     session_destroy();
+    unset($_SESSION['token']);
 
     header("location: index.php");
 }

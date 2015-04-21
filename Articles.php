@@ -58,7 +58,7 @@ $pagination = new Pagination($data);
     <div class="col-md-6">
         <div class="pview-banner">
             <p>
-                All Posts <span class="label label-danger"> 45</span>
+               We currently have  <span class="label label-danger"><?php echo $articles->countPosts() ?></span> Articles
             </p>
 
 
@@ -81,6 +81,7 @@ $pagination = new Pagination($data);
 
         <div class="col-md-3">
             <div class="ads">
+
 
             </div>
             <div class="latest-wrap">

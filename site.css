@@ -336,11 +336,28 @@ ul.addons li {
     font-size: 18px;
 }
 .footer {
-    height: 120px;
+    height: auto;
     background: #1E404F;
     border-top: solid rgb(77, 41, 41) 4px;
     padding: 10px 2px;
     margin-top: 10px;
+    overflow: hidden;
+
+}
+.navi{
+    margin-right: 10px;
+}
+h2.nav-title {
+    color: rgb(159, 178, 45);
+    border-bottom: solid 2px;
+    padding: 2px 4px;
+}
+
+.navi .nav.nav-pills.nav-stacked li {
+    margin-bottom: -10px;
+}
+.navi ul.nav.nav-pills.nav-stacked li a {
+    color: #BBB9B9;
 }
 input#exampleInputName2 {
     width: 70%;

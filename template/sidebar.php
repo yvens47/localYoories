@@ -14,12 +14,13 @@
     </div>
     <div class="filter-nav">
         <p class="category">Category</p>
-        <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="?type=posts">Videos  <span class="badge">4</span></a> </li>
-            <li class="active"><a href="?type=how-to">How-tos</a> </li>
-            <li class="active"><a href="?type=jokes">Jokes  <span class="badge">4</span></a> </li>
-            <li class="active"><a href="?type=tips">Tip and Tricks</a> </li>
 
+        <ul class="nav nav-pills nav-stacked">
+            <?php foreach($articles->categories() as $category): ?>
+            <li class="active "><a href="?type=<?php echo $category['type'] ?>"><?php  echo $category['type'] ;?>
+                    <span class="badge pull-right"><?php echo $articles->countCats($category['type']) ?></span></a> </li>
+
+            <?php endforeach ;?>
         </ul>
     </div>
 </div>

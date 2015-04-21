@@ -117,7 +117,7 @@ class Articles {
             case "jokes":
                 $this->posts();
                 break;
-            case 'tips':
+            case 'Tips':
                 $this->posts();
                 break;
             default:
@@ -130,9 +130,25 @@ class Articles {
 
     }
 
-    function countViews(){
+    function countViews($id){
 
-        echo $_SERVER['REMOTE_ADDR'];
+        $ip =  $_SERVER['REMOTE_ADDR'];
+        $sql = "select ip from views where ip= '$ip' AND post_id='$id'";
+        $query = $this->db->query($sql);
+
+        if(mysqli_num_rows($query) ==  0){
+            $sql = "INSERT INTO views	VALUES (null,$id,1,'$ip')";
+            echo $sql;
+
+            $query = $this->db->query($sql);
+        }
+
+        $sql  ="SELECT count(count) as num from views where post_id =$id";
+        $query = $this->db->query($sql);
+        $count =  mysqli_fetch_assoc($query);
+        mysqli_close($this->db->connect());
+
+        return $count['num'];
     }
     function  edit($id){
         //$this->posts();
@@ -141,6 +157,24 @@ class Articles {
         $query = $this->db->query($sql);
 
         return mysqli_fetch_assoc($query);
+
+    }
+
+    function countCats($cat){
+
+        $sql = "SELECT count(post_id) as num from posts as count where type='$cat'";
+        $query = $this->db->query($sql);;
+
+        return( mysqli_fetch_assoc($query)['num']);
+
+
+    }
+
+    function countPosts(){
+        $sql = "SELECT count(post_id) as num from posts";
+        $query = $this->db->query($sql);;
+
+        return( mysqli_fetch_assoc($query)['num']);
 
     }
 
@@ -175,8 +209,13 @@ class Articles {
     }
 
     function categories(){
-        $sql = "select distinct(type) from posts";
+        $sql = "select distinct(type) from posts ";
         $query = $this->db->query($sql);
+
+        while($row = mysqli_fetch_assoc($query)){
+            $rows [] = $row;
+        }
+         return ($rows);
     }
 
     public function posts()
