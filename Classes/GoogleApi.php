@@ -226,13 +226,13 @@ class GoogleApi
 
             echo "<div class=\"trends thumbnail\">
                             <a href=\"video.php?id=$id\">
-                            <img src=\"$image\" alt=\"LA MEDAILLE (FULL HAITIAN MOVIE)\"></a> <p class=\"name\">La medaille </p>
+                            <img src=\"$image\" alt=\"LA MEDAILLE (FULL HAITIAN MOVIE)\"></a> <p class=\"name\">$title </p>
                 <div>
 
                 <ul class=\"p-icons\">
                     <li><i class=\"glyphicon glyphicon-play\"></i></li>
                     <li><i class=\"glyphicon glyphicon-eye-open\"></i></li>
-                    <li><i class=\"glyphicon glyphicon-plus\"></i></li>
+                    <li><i class=\"glyphicon glyphicon-plus add\" data-title=\"$title\" data-id=\"$id\"></i></li>
                     <li> <i class=\"glyphicon glyphicon-thumbs-up\"></i></li>
             </ul>
                    <p class=\"description\">$descr</p>
@@ -242,6 +242,27 @@ class GoogleApi
 
         }
 
+
+
+    }
+
+
+    function saveToWatchList($title, $movieid){
+         // check if videoid is already existed
+
+        $sql = "select movie_id  from watchlist  where movie_id ='$movieid'";
+
+        $query = $this->db->query($sql);
+
+        if(mysqli_num_rows($query) > 0){
+            echo "already Added";
+
+        }else{
+            $sql = "insert into watchlist VALUES (null, '$title', '$movieid')";
+            $query = $this->db->query($sql);
+            if($query)
+                echo "Movie has been added to watchlist";
+        }
     }
 
 

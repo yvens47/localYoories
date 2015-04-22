@@ -17,37 +17,42 @@ $(document).ready(function () {
         }, 300)
     })
 
-    var app = new App();
-    $(".alert").hide();
-    $(".login").submit(function (e) {
-        var email = $(".email").val();
-        var password = $(".password").val();
-
-        app.setEmai(email);
+    addtoWatchList();
 
 
-        //console.log(app.getEmail());
-        if (!app.validateEmail($(".flash"))) {
-            alert("bademail");
-        } else if (!app.len(password, 7)) {
-            $(".alert").find("p:first").html("password is to shorty");
-            $(".alert").show();
-        } else {
-            app.ajaxRequest($(".login"), $(".flash"));
-        }
-        // ajax request
-
-
-        e.preventDefault();
-
-
-    })
-
-    $(".post-vid li").mouseover(function () {
-        $(this).find("p.description").css('display', 'block').addClass("overlay-desc");
-
-    })
 });
+
+
+var app = new App();
+$(".alert").hide();
+$(".login").submit(function (e) {
+    var email = $(".email").val();
+    var password = $(".password").val();
+
+    app.setEmai(email);
+
+
+    //console.log(app.getEmail());
+    if (!app.validateEmail($(".flash"))) {
+        alert("bademail");
+    } else if (!app.len(password, 7)) {
+        $(".alert").find("p:first").html("password is to shorty");
+        $(".alert").show();
+    } else {
+        app.ajaxRequest($(".login"), $(".flash"));
+    }
+    // ajax request
+
+
+    e.preventDefault();
+
+
+})
+
+$(".post-vid li").mouseover(function () {
+    $(this).find("p.description").css('display', 'block').addClass("overlay-desc");
+
+})
 
 $(".post-vid li").mouseleave(function() {
     $(this).find('p.description').css('display', "none");
@@ -169,4 +174,30 @@ function onPlayerStateChange(event) {
 }
 function stopVideo() {
     player.stopVideo();
+}
+
+
+function addtoWatchList(){
+
+    $(".add ").click(function(){
+        var elemTitle = $(this).attr('data-title');
+        var movieId = $(this).attr('data-id');
+        console.log(elemTitle);
+
+        console.log("click");
+        // adding script
+        $.ajax({
+
+            url: "adding.php",
+            data: {vidid: movieId, movieTitle: elemTitle},
+            type: "POST",
+            success: function(d){
+                //console.log(elem.attr('data-title'));
+
+                alert(elemTitle+" "+d);
+            }
+        })
+
+    })
+
 }

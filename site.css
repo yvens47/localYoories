@@ -732,6 +732,27 @@ ul.p-icons {
     .addons{
         display: none;
     }
+
+
+    .rel{
+        width: 100%;
+        float: none;
+        text-align: center;
+        border-bottom: solid 1px #A8A1A1;
+    }
+    .img-home{
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+    .home-div{
+        position: static;
+        width:100%;
+    }
+
+    .banner .col-md-4{
+        display: none;
+    }
 }
 
 
