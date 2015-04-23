@@ -165,22 +165,17 @@ ul.latest {
     height: 230px;
     margin-bottom: 10px;
 }
-ul.latest li {
-    overflow: hidden;
-    /* border-bottom: 1px dashed #C7C7C7; */
-    margin-bottom: 10px;
-    background: #fff;
-    padding: 3px 4px;
-    box-shadow: 2px 1px 2px 1px #CBC9C9;
-}
+
 ul.latest li img {
-    width: 90px;
+    width: 80px;
     float: left;
     margin: 3px 10px 2px 0;
     padding: 3px 4px;
     border: solid #eee 1px;
 }
-
+.latest li a{
+    color: #5e5e5e;
+}
 .mid {
     float: none;
     margin: 0 auto;
@@ -662,6 +657,13 @@ ul.post-vid {
     padding: 10px;
 }
 
+.i-wrapper {
+    text-align: center;
+}
+.p-icons i {
+    margin: 5px 15px 3px 1px;
+}
+
 .filter-nav ul {
     list-style: none;
     padding: 0;
@@ -713,6 +715,23 @@ ul.p-icons {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.latest li {
+    overflow: hidden;
+    /* border-bottom: 1px dashed #C7C7C7; */
+    margin-bottom: 5px;
+    background: #fff;
+    padding: 3px 4px;
+    box-shadow: 2px 1px 2px 1px #CBC9C9;
+}
+
+.latest li img {
+    width: 80px;
+    float: left;
+    margin: 3px 10px 2px 0;
+    padding: 3px 4px;
+    border: solid #eee 1px;
 }
 @media screen and (max-width: 360px){
     .trends{

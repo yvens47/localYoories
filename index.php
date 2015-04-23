@@ -14,7 +14,10 @@ $youtube = new GoogleApi();
 $videos = new Videos();
 
 $data  = ($videos->videoIds() );
+
 $pagination = new Pagination($data);
+
+$features = array_slice($data, 2,5);
 
 
 ?>
@@ -24,6 +27,8 @@ $pagination = new Pagination($data);
 <div class="banner">
     <div class="container">
         <div class="row">
+
+
             <div class="col-md-8"><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -40,6 +45,24 @@ $pagination = new Pagination($data);
                                 ...
                             </div>
                         </div>
+
+                        <?php
+                        foreach($features as $feature){
+                            $videos = $youtube->features($feature['vidid']);
+                            foreach($videos as $vid){
+                                //print_r($vid);
+                                $img = $vid[3];
+                              echo   "<div class=\"item\">
+                            <img src=\"$img\" alt=\"...\">
+                            <div class=\"carousel-caption\">
+                                ...
+                            </div>
+                        </div>";
+                            }
+
+                        }
+
+                        ?>
                         <div class="item">
                             <img src="http://yoories.com/pic2.png" alt="...">
                             <div class="carousel-caption">
@@ -64,27 +87,12 @@ $pagination = new Pagination($data);
                     <div class="panel-heading"><h3 class="panel-title">Latest Movies</h3></div>
                     <div class="panel-body">
                         <ul class="latest">
-                            <li>
-                                <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
 
-                                <p class="ltitle"> title for the latest video in the database display here</p>
-                            </li>
-                            <li>
-                                <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
+                            <?php
+                              $youtube->mostPopularYoutube(4) ;
 
-                                <p class="ltitle"> title for the latest video in the database display here</p>
-                            </li>
+                            ?>
 
-                            <li>
-                                <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
-
-                                <p class="ltitle"> title for the latest video in the database display here</p>
-                            </li>
-                            <li>
-                                <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
-
-                                <p class="ltitle"> title for the latest video in the database display here</p>
-                            </li>
 
                         </ul>
                     </div>

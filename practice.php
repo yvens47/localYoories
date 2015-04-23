@@ -1,41 +1,28 @@
 <?php
 
 
-if($this->type =='posts'){
-    $this->setType('article');
-    $this->posts();
+require_once "autoload.php";
 
+;
+$page = new Page("welcome");
+$youtube = new GoogleApi();
+$videos = new Videos();
+
+$data  = ($videos->videoIds() );
+
+$pagination = new Pagination($data);
+
+$features = array_slice($data, 2,5);
+
+echo  "<pre/>";
+foreach($features as $feature){
+    $videos = $youtube->features($feature['vidid']);
+    foreach($videos as $vid){
+        print_r($vid);
+        echo $vid[1].'<br/>';
+    }
 
 }
-else if($this->type == 'how-to'){
-
-    $this->setType('how-to');
-    $this->posts();
-
-}else if($this->type='jokes'){
-    echo $this->type;
-
-    //$this->setType('jokes');//
-    echo $this->getType();
-    $this->posts();
-}else if($this->type='tips'){
-    $this->setType('tips');
-    $this->posts();
-}
 
 
-else{
-
-    //header('location: Articles.php?type=posts');
-
-    $this->posts();
-
-    $post = $this->db->all('posts');
-    $how = $this->db->all('how');
-
-    $data = array_merge($post, $how);
-
-
-    return $data;
-}
-
+?>

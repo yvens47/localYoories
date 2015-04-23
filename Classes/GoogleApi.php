@@ -21,6 +21,8 @@ class GoogleApi
     private $id;
     private $countComments;
 
+    private $paginToken;
+
     /**
      * @return mixed
      */
@@ -93,6 +95,7 @@ class GoogleApi
 
     }
 
+
     function showsAll()
     {
         $sql = "select * from videos";
@@ -104,7 +107,6 @@ class GoogleApi
     }
 
     function isVideoFound($id){
-
         $isfound = true;
         $options = array('id' => $id,);
         $youtube = $this->service->videos->listVideos('id, snippet', $options);
@@ -206,13 +208,81 @@ class GoogleApi
     }
 
 
-    function video($id)
+    function mostPopularYoutube($num){
+        $randSearch =  array('funny haitian videos', 'hatian jokes', 'haitian meem');
+        $randNum = rand(0, count($randSearch)-1);
+        $search  = $this->service->search->listSearch('id, snippet',array(
+            'q' =>$randSearch[$randNum],
+            'maxResults'=>$num,
+
+            //'order'=>'rating'
+        ));
+
+        $it = new RecursiveArrayIterator ($search['items']);
+        while($it->valid()){
+
+            $id =  $it->current()['id']['videoId'];
+            $title = $it->current()['snippet']['title'];
+            $img = $it->current()['snippet']['thumbnails']['high']['url'];
+            $description = $it->current()['snippet']['description'];
+             $title = strtolower(substr($title, 0 ,90)."...");
+
+            echo "<li>
+                        <a href=\"video.php?id=$id\">
+                       <img src=\"$img\" alt=\"title\">
+                        <p class=\"ltitle\"> $title</p>
+
+                        </a>
+
+                </li>";
+
+            $it->next();
+        }
+
+
+    }
+
+    function  features($id)
     {
         $options = array('id' => $id,);
         $youtube = $this->service->videos->listVideos('id, snippet', $options);
 
         $items = $youtube['items'];
         //print_r($items);
+        // $id = $items['snippet']['id'];
+
+       // print_r($items);
+
+        $videos = array();
+
+
+        foreach ($items as $item) {
+            $id = ($item['id']);
+            $title = $item['snippet']['title'];
+            $descr = $item['snippet']['description'];
+            $image = $item['snippet']['thumbnails']['high']['url'];
+            $channelTitle = $item['snippet']['channelTitle'];
+
+            $it = array($id, $title, $descr, $image, $channelTitle);
+
+           //array_merge( $it, $videos);
+
+             array_push($videos, $it);
+
+        }
+
+        return ($videos);
+
+    }
+
+
+    function video($id)
+    {
+        $options = array('id' => $id,);
+        $youtube = $this->service->videos->listVideos('id, snippet', $options);
+
+        $items = $youtube['items'];
+        print_r($items);
         // $id = $items['snippet']['id'];
 
 

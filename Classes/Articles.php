@@ -108,8 +108,6 @@ class Articles {
     }
 
     function displayArticles(){
-
-
         switch($this->getType()){
             case "how-to":
                $this->posts();
@@ -124,7 +122,6 @@ class Articles {
                 $this->setType('article');
                 $this->posts();
                 break;
-
         }
 
 
