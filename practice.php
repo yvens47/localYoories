@@ -1,28 +1,20 @@
 <?php
 
 
-require_once "autoload.php";
+require_once 'Zend/Loader.php';
 
-;
-$page = new Page("welcome");
-$youtube = new GoogleApi();
-$videos = new Videos();
+Zend_Loader::loadClass('Zend_Db');
+$db = Zend_Db::factory('Mysqli',array(
+    'host'     => '127.0.0.1',
+    'username' => 'root',
+    'password' => 'yvenstij43gt',
+    'dbname'   => 'Yoories'
+));
 
-$data  = ($videos->videoIds() );
+//$results = $db->fetchAll('select * from posts  where post_id= ?', 2);
 
-$pagination = new Pagination($data);
+//print_r($results);
 
-$features = array_slice($data, 2,5);
-
-echo  "<pre/>";
-foreach($features as $feature){
-    $videos = $youtube->features($feature['vidid']);
-    foreach($videos as $vid){
-        print_r($vid);
-        echo $vid[1].'<br/>';
-    }
-
-}
+$query = $db->query("select * from posts  where post_id= ?", array(2));
 
 
-?>

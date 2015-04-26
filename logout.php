@@ -7,10 +7,12 @@
  */
 
 session_start();
-if(isset($_SESSION['userid']) || isset($_SESSION['token'])){
+
+if(isset($_SESSION['email']) || isset($_SESSION['token'])){
 
     session_destroy();
-    unset($_SESSION['token']);
+   // unset($_SESSION['token']);
+
 
     header("location: index.php");
 }

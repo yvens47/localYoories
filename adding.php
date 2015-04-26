@@ -7,16 +7,28 @@
  * description: adding to watch List Via ASjax Jquery
  */
 
+session_start();
 require_once 'autoload.php';
-if(isset($_POST)){
-    $title = $_POST['movieTitle'];
-    $id = $_POST['vidid'];
 
-     // save to table watchlist
 
-    $youtube = new GoogleApi();
+$user = new User();
+if(!$user->isLogin()){
 
-    $youtube->saveToWatchList($title, $id);
-    echo $title;
+       return 0;
+    exit;
+}else{
 
+    if(isset($_POST)){
+        $title = $_POST['movieTitle'];
+        $id = $_POST['vidid'];
+
+        // save to table watchlist
+
+        $youtube = new GoogleApi();
+
+        $youtube->saveToWatchList($title, $id);
+        echo $title;
+
+    }
 }
+

@@ -242,20 +242,18 @@ class GoogleApi
 
     }
 
+    /*
+     * @param $id  video id of the youtube vider
+     * return array : of a youtube video, description and title
+     */
+
     function  features($id)
     {
         $options = array('id' => $id,);
         $youtube = $this->service->videos->listVideos('id, snippet', $options);
-
         $items = $youtube['items'];
-        //print_r($items);
-        // $id = $items['snippet']['id'];
-
-       // print_r($items);
 
         $videos = array();
-
-
         foreach ($items as $item) {
             $id = ($item['id']);
             $title = $item['snippet']['title'];
@@ -282,8 +280,7 @@ class GoogleApi
         $youtube = $this->service->videos->listVideos('id, snippet', $options);
 
         $items = $youtube['items'];
-        print_r($items);
-        // $id = $items['snippet']['id'];
+
 
 
         foreach ($items as $item) {
@@ -319,8 +316,9 @@ class GoogleApi
 
     function saveToWatchList($title, $movieid){
          // check if videoid is already existed
+        $email = $_SESSION['email'];
 
-        $sql = "select movie_id  from watchlist  where movie_id ='$movieid'";
+        $sql = "select movie_id  from watchlist  where movie_id ='$movieid' AND email='$email'";
 
         $query = $this->db->query($sql);
 
@@ -328,11 +326,32 @@ class GoogleApi
             echo "already Added";
 
         }else{
-            $sql = "insert into watchlist VALUES (null, '$title', '$movieid')";
+
+            $sql = "insert into watchlist VALUES (null, '$title', '$movieid','$email')";
             $query = $this->db->query($sql);
             if($query)
                 echo "Movie has been added to watchlist";
         }
+    }
+
+    function viewWatchList(){
+
+        $email = isset($_SESSION['email']) ? $_SESSION['email']: "fake@gmail.com";
+        $sql = "SELECT movie_id FROM watchlist WHERE email ='$email'";
+        $query = $this->db->query($sql);
+
+        if(mysqli_num_rows($query)  == 0){
+            echo " You Have not added anything to watchlist Yet";
+        }else if(mysqli_num_rows($query) == 1){
+            return mysqli_fetch_assoc($query);
+        }else{
+            while($row = mysqli_fetch_assoc($query)){
+                $rows[] = $row;
+            }
+
+            return($rows);
+        }
+
     }
 
 

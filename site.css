@@ -242,6 +242,16 @@ img.media-object {
     color: #662B2B;
 }
 
+.adding {
+    padding: 2px;
+    float: right;
+    background: #7B6459;
+}
+.post-img {
+    border: solid 1px #eee;
+    padding: 10px;
+}
+
 .titlePost h1 {
     padding: 20px 0 0 0;
     color: #662B2B;

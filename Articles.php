@@ -51,7 +51,7 @@ $pagination = new Pagination($data);
         <?php require_once 'template/sidebar.php' ?>
 
         <div class="add">
-            <a href="#" class="btn btn-primary add_btn">Add Article</a>
+
         </div>
 
     </div>
@@ -59,7 +59,10 @@ $pagination = new Pagination($data);
         <div class="pview-banner">
             <p>
                We currently have  <span class="label label-danger"><?php echo $articles->countPosts() ?></span> Articles
+
+                <a href="add.php" class="btn  adding btn-primary">add</a>
             </p>
+
 
 
 

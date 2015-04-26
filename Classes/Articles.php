@@ -27,7 +27,11 @@ class Articles {
      * @param mixed $type
      */
     public function setType($type)
+
     {
+        if($type == null){
+            $this->type ='articles';
+        }
         $this->type = $type;
     }
     private $db;
@@ -108,6 +112,7 @@ class Articles {
     }
 
     function displayArticles(){
+
         switch($this->getType()){
             case "how-to":
                $this->posts();
@@ -119,7 +124,7 @@ class Articles {
                 $this->posts();
                 break;
             default:
-                $this->setType('article');
+                $this->setType('articles');
                 $this->posts();
                 break;
         }

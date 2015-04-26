@@ -6,15 +6,17 @@
  * Time: 10:10 AM
  */
 
+session_start();
+
 require_once "autoload.php";
 
-;
+$user = new User();
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
 
 $data  = ($videos->videoIds() );
-
+$articles = new Articles(null);
 $pagination = new Pagination($data);
 
 $features = array_slice($data, 2,5);
@@ -24,8 +26,17 @@ $features = array_slice($data, 2,5);
 
 <?php require_once 'template/header.php' ?>
 
+
 <div class="banner">
+
+
     <div class="container">
+        <div class="alert  info alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <p>We'd like to let you know That the Site is currently in <b>beta</b> stage. which means, some of the features might not work.
+                Please be patient.
+            </p>
+        </div>
         <div class="row">
 
 
@@ -45,24 +56,6 @@ $features = array_slice($data, 2,5);
                                 ...
                             </div>
                         </div>
-
-                        <?php
-                        foreach($features as $feature){
-                            $videos = $youtube->features($feature['vidid']);
-                            foreach($videos as $vid){
-                                //print_r($vid);
-                                $img = $vid[3];
-                              echo   "<div class=\"item\">
-                            <img src=\"$img\" alt=\"...\">
-                            <div class=\"carousel-caption\">
-                                ...
-                            </div>
-                        </div>";
-                            }
-
-                        }
-
-                        ?>
                         <div class="item">
                             <img src="http://yoories.com/pic2.png" alt="...">
                             <div class="carousel-caption">
@@ -143,12 +136,14 @@ $features = array_slice($data, 2,5);
 
                 </div>
                 <div class="filter-nav">
-                    <p class="category">Category</p>
+                    <p class="category">Articles</p>
                     <ul>
-                        <li><a href="">Videos</a> </li>
-                        <li><a href="">Tutorisl</a> </li>
-                        <li><a href="">Videos</a> </li>
-                        <li><a href="#">Jokes</a> </li>
+            <?php foreach($articles->categories() as $category): ?>
+
+                    <li class="active "><a href="Articles.php?type=<?php echo $category['type'] ?>"><?php  echo $category['type'] ;?>
+                            <span class="badge"><?php echo $articles->countCats($category['type']) ?></span></a> </li>
+
+                <?php endforeach ;?>
                     </ul>
                 </div>
             </div>
@@ -186,7 +181,7 @@ foreach($chunks as $chunk){
     <?php
      $i = isset($_GET['page']) ? $_GET['page'] : 1; ?>
             <nav>
-                <ul class="pagination">
+                <ul class="pagination pagination-lg">
                     <li>
                         <a href="<?php $_SERVER['PHP_SELF'] ?>?page=<?php echo $i-1?> " aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>

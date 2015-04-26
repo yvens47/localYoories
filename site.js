@@ -20,10 +20,42 @@ $(document).ready(function () {
     addtoWatchList();
 
 
+
 });
+window.onload = function(){
+
+    infoStage("Beta");
+}
 
 
-var app = new App();
+
+function infoStage(stage){
+
+    if((readCookie("warning") =='info')){
+        $(".info").hide();
+    }else{
+        document.cookie = 'warning=info';
+        $(".info").show();
+    }
+
+
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+
+
+
+
 $(".alert").hide();
 $(".login").submit(function (e) {
     var email = $(".email").val();
@@ -64,82 +96,6 @@ $(".post-vid li").mouseleave(function() {
 
 
 
-function App() {
-    this.appName = "yoories"
-    this.email;
-
-}
-
-App.prototype.name = "yoories";
-
-App.prototype = {
-    init: App,
-    Name: function () {
-        console.log(this.appName);
-    },
-
-    setEmai: function (email) {
-        this.email = email;
-    },
-    getEmail: function () {
-        return this.email;
-    },
-    validateEmail: function (elem) {
-        var re = /\w+@+\w+\.([a-z])+/;
-        var str = this.getEmail();
-        var m;
-
-        if ((m = re.exec(str)) !== null) {
-            if (m.index === re.lastIndex) {
-                re.lastIndex++;
-            }
-            // View your result using the m-variable.
-            // eg m[0] etc.
-            return true;
-        } else {
-            return false
-        }
-    },
-
-    /* get the lenghth of the string
-     * @precondition str >= length
-     * @return true
-     */
-
-    len: function (str, length) {
-        var isfalse = false
-        if (str.length >= length)
-            isfalse = true
-
-
-        return isfalse;
-
-
-    },
-
-    ajaxRequest: function (formname, elem) {
-
-        $.ajax({
-            url: "doLogin.php",
-            type: "POST",
-            data: formname.serializeArray(),
-            success: function (data, status, xr) {
-
-                if (status != 'success') {
-                    document.location = "app.php";
-                } else {
-                    console.log(data);
-                    elem.html(data);
-
-
-                }
-
-            }
-        })
-    }
-
-
-}
 
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
@@ -193,8 +149,13 @@ function addtoWatchList(){
             type: "POST",
             success: function(d){
                 //console.log(elem.attr('data-title'));
+                 if(d ==''){
 
-                alert(elemTitle+" "+d);
+                    alert("You must sign in in order to save a movie to watchlist");
+                 }else{
+                     alert(elemTitle+" "+d);
+                 }
+
             }
         })
 

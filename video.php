@@ -7,7 +7,9 @@
  */
 session_start();
 
+
 require_once "autoload.php";
+$user = new User();
 $page = new Page("welcome");
 $id = $_GET['id'];
 echo empty($id);
@@ -92,71 +94,37 @@ if(!$youtube->isVideoFound($id)){
 
             </div>
             <div class="col-md-4 views-left">
-               <!-- <ul class="most-popular">
-                    <li>
-                        <a href="video.php?id=DA7sDnn6AmA">
-                            <img src="https://i.ytimg.com/vi/DA7sDnn6AmA/hqdefault.jpg" alt="Haitian reporters be like">
-                        </a>
-                        <p class="ltitle"> Haitian reporters be like</p>
-
-                    </li><li>
-                        <a href="video.php?id=7aFOE0n5K3c">
-                            <img src="https://i.ytimg.com/vi/7aFOE0n5K3c/hqdefault.jpg" alt="Haitian (Funny Videos)">
-                        </a>
-                        <p class="ltitle"> Haitian (Funny Videos)</p>
-
-                    </li><li>
-                        <a href="profile.php?id=T5Y84g57cnc">
-                            <img src="https://i.ytimg.com/vi/T5Y84g57cnc/hqdefault.jpg" alt="funny haitian political jokes">
-                        </a>
-                        <p class="ltitle"> funny haitian political jokes</p>
-
-                    </li><li>
-                        <a href="profile.php?id=nklANzTpsoY">
-                            <img src="https://i.ytimg.com/vi/nklANzTpsoY/hqdefault.jpg" alt="Nazaire :: Haitian Superflat :: Heineken Draughtkeg">
-                        </a>
-                        <p class="ltitle"> Nazaire :: Haitian Superflat :: Heineken Draughtkeg</p>
-
-                    </li><li>
-                        <a href="profile.php?id=Ny7X4QfjSMU">
-                            <img src="https://i.ytimg.com/vi/Ny7X4QfjSMU/hqdefault.jpg" alt="Men Doktè Zoe (Funny Haitians)">
-                        </a>
-                        <p class="ltitle"> Men Doktè Zoe (Funny Haitians)</p>
-
-                    </li><li>
-                        <a href="profile.php?id=4IzpVV8nfaM">
-                            <img src="https://i.ytimg.com/vi/4IzpVV8nfaM/hqdefault.jpg" alt="Funny ass video Haitian dogiein lol.east side">
-                        </a>
-                        <p class="ltitle"> Funny ass video Haitian dogiein lol.east side</p>
-
-                    </li>            </ul>-->
 
                 <div class="social-login">
 
                     <div class="panel">
                         <div class="panel panel-warning">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Login</h3>
+                                <h3 class="panel-title">WatchLists  <span class=" pull-right label label-info">4</span> </h3>
                             </div>
                             <div class="panel-body">
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                        </div>
-                                    </div>
+                                <ul class="latest">
+                                    <?php
+                                        $watchlist = $youtube->viewWatchList();
+                                        if(is_array($watchlist) && count($watchlist) > 1 ):
+                                            foreach($watchlist as $list): ?>
+                                              <?php   $movie = $youtube->features($list['movie_id']);    ?>
+                                                <li>
+                                        <img src="<?php echo $movie[0][3]  ?>" alt="">
 
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-default">Sign in</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                        <p class="ltitle"> <?php echo $movie[0][1] ?></p>
+                                        <i class="glyphicon glyphicon-remove-sign"></i>
+                                    </li>
+
+                                      <?php endforeach      ?>
+
+                                        <?php endif  ?>
+
+
+
+
+                                </ul>
+
                             </div>
                             <div class="panel-footer">Google+ is Recommended</div>
                         </div>
