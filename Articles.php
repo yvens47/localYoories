@@ -10,6 +10,7 @@ require_once "autoload.php";
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
+
 $type = "posts";
 if(isset($_GET['type'])){
 

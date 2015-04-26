@@ -1,3 +1,4 @@
+<?php $user = new User(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,9 +75,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php if($user->isLogin()) : ?>
                     <li class="active"><a href="logout.php">Logout</a></li>
-                <?php endif; ?>
+                <?php else : ?>
                 <li class="active"><a href="register.php">Signup</a></li>
                 <li><a href="login.php">Login</a></li>
+                <?php endif ?>
 
             </ul>
         </div><!--/.nav-collapse -->

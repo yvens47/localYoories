@@ -342,8 +342,8 @@ ul.addons li {
 }
 .footer {
     height: auto;
-    background: #1E404F;
-    border-top: solid rgb(77, 41, 41) 4px;
+    background: #CFCFCF;
+    border-top: solid rgb(65, 167, 197) 20px;
     padding: 10px 2px;
     margin-top: 10px;
     overflow: hidden;
@@ -352,18 +352,31 @@ ul.addons li {
 .navi{
     margin-right: 10px;
 }
-h2.nav-title {
-    color: rgb(159, 178, 45);
-    border-bottom: solid 2px;
+.nav-title {
+    color: rgb(128, 129, 119);
+    /* border-bottom: solid 2px; */
     padding: 2px 4px;
 }
 
-.navi .nav.nav-pills.nav-stacked li {
-    margin-bottom: -10px;
+.-footer-content {
+    background: white;
+    height: 45px;
+    padding: 10px 10px;
 }
-.navi ul.nav.nav-pills.nav-stacked li a {
-    color: #BBB9B9;
+
+ul.nav-footer {
+    margin: 0;
+    padding: 0 10px;
+    list-style: none;
+    color: #eee;
 }
+
+ul.nav-footer li a {
+    color: rgb(129, 131, 129);
+    font-size: 15px;
+}
+
+
 input#exampleInputName2 {
     width: 70%;
 }
@@ -742,6 +755,7 @@ ul.p-icons {
     margin: 3px 10px 2px 0;
     padding: 3px 4px;
     border: solid #eee 1px;
+    height: 55px;
 }
 @media screen and (max-width: 360px){
     .trends{

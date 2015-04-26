@@ -3,7 +3,8 @@
 
 session_start();
 require_once "autoload.php";
-$page = new Page("welcome");
+$user = new User() ;
+$page = new Page("Login");
 require_once 'template/header.php';
 
 $user = UserFactory::create();

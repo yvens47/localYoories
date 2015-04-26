@@ -9,7 +9,7 @@ session_start();
 
 
 require_once "autoload.php";
-$user = new User();
+
 $page = new Page("welcome");
 $id = $_GET['id'];
 echo empty($id);
@@ -100,7 +100,9 @@ if(!$youtube->isVideoFound($id)){
                     <div class="panel">
                         <div class="panel panel-warning">
                             <div class="panel-heading">
-                                <h3 class="panel-title">WatchLists  <span class=" pull-right label label-info">4</span> </h3>
+                               <?php  $watchlist = $youtube->viewWatchList(); ?>
+                                <h3 class="panel-title">WatchLists  <span class=" pull-right label label-info">
+                                        <?php echo sizeof($watchlist) ?></span> </h3>
                             </div>
                             <div class="panel-body">
                                 <ul class="latest">
@@ -110,7 +112,9 @@ if(!$youtube->isVideoFound($id)){
                                             foreach($watchlist as $list): ?>
                                               <?php   $movie = $youtube->features($list['movie_id']);    ?>
                                                 <li>
-                                        <img src="<?php echo $movie[0][3]  ?>" alt="">
+                                        <a href="video.php?id=<?php echo $movie[0][0]; ?>">
+                                            <img src="<?php echo $movie[0][3]  ?>" alt="">
+                                        </a>
 
                                         <p class="ltitle"> <?php echo $movie[0][1] ?></p>
                                         <i class="glyphicon glyphicon-remove-sign"></i>

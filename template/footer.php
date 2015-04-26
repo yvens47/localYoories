@@ -4,11 +4,11 @@
 
 <div class="footer">
     <div class="container">
-        <p>content  vjhvhvhj  biuiuhoih fxgf</p>
+
 
         <div class="navi col-md-2">
             <h2 class="nav-title">Media</h2>
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav-footer ">
                 <li role="presentation" class=""><a href="#">Home</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
                 <li role="presentation"><a href="#">Messages</a></li>
@@ -17,7 +17,7 @@
 
         <div class="navi col-md-2">
             <h2 class="nav-title">Articles</h2>
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav-footer ">
                 <li role="presentation" class=""><a href="#">How-tos</a></li>
                 <li role="presentation"><a href="#">Tips-tricks</a></li>
                 <li role="presentation"><a href="#">Short Jokes</a></li>
@@ -25,7 +25,7 @@
         </div>
         <div class="navi col-md-3">
             <h2 class="nav-title">Media</h2>
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav-footer">
                 <li role="presentation" class=""><a href="#">Home</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
                 <li role="presentation"><a href="#">Messages</a></li>
@@ -35,13 +35,9 @@
 
         <div class="navi nav-n col-md-4">
             <h2 class="nav-title">Media</h2>
-            <input type="text"  class="form-control" name="search" placeholder="search"/>
-            <ul class="social-list">
-                <li><a href="#">Facebook</a> </li>
-                <li><a href="#">Facebook</a> </li>
-                <li><a href="#">Facebook</a> </li>
+            <div class="-footer-content">
 
-            </ul>
+            </div>
         </div>
     </div>
 
