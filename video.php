@@ -190,7 +190,7 @@ if(!$youtube->isVideoFound($id)){
                         </div>
 
                     <div class="recom-1">
-                        <img class="" src="Images/mostPopular.jpg">
+                        <img class="" src="Images/cousine.png">
                         <p>  here here to describe this videos
                             <a href="" class="btn btn-warning">Vierw </a>
                         </p>
