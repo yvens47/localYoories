@@ -38,7 +38,7 @@ class User extends Database
 
 
         $email = $this->connect()->escape_string($email);
-        $password = $this->connect()->escape_string($password);
+        $password = md5($this->connect()->escape_string($password));
 
         $sql = "select * from login where email ='$email' and password='$password'";
         $q = $this->query($sql);
@@ -48,7 +48,7 @@ class User extends Database
             $result = $q->fetch_assoc();
             $_SESSION['userid'] = $result['userid'];
             $_SESSION['email'] = $result['email'];
-            header('location: app.php');
+            header('location: index.php');
 
         } else {
             //login user
@@ -70,7 +70,7 @@ class User extends Database
     {
 
         $email = $this->connect()->escape_string($email);
-        $password = $this->connect()->escape_string($password);
+        $password = md5($this->connect()->escape_string($password));
 
         $sql = "select email,password from login where email ='$email' and password='$password'";
 
