@@ -41,6 +41,7 @@ class User extends Database
         $password = md5($this->connect()->escape_string($password));
 
         $sql = "select * from login where email ='$email' and password='$password'";
+        echo $sql;
         $q = $this->query($sql);
 
         if ($q->num_rows > 0) {
