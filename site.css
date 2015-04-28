@@ -13,8 +13,56 @@ body{
     overflow: hidden;
 }
 
+
+
 .form-wrap {
-    margin-top: 60px;
+    margin: 60px auto;
+    width: 35%;
+    border: solid #eee 1px;
+    background: #F7F7F7;
+}
+#form-wrap {
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.form-wrap-bg{
+
+}
+
+.form-login {
+    background: #eee;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+}
+
+.form-login a {
+    width: auto;
+    /* background: rgb(177, 179, 177); */
+    float: left;
+    display: inline;
+    margin: 3px 3px 3px 30px;
+    padding: 1px;
+}
+
+.login-btn {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+.google-login{
+    color: green;
+    display: block;
+    /* border: red 1px solid; */
+    width: auto;
+    float: left;
+    margin-left: 20px;
+    padding: 5px 3px;
 }
 .post-comment-btn {
     /*display: none;*/

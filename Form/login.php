@@ -9,6 +9,7 @@
 </div>
 
 <form class="form-horizontal login" action="doLogin.php" method="post" name="login">
+    <div id="form-wrap">
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
@@ -21,7 +22,8 @@
             <input type="password"  name="password" class="form-control password" id="inputPassword3" placeholder="Password">
         </div>
     </div>
-    <div class="form-group">
+    </div>
+   <!-- <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <div class="checkbox">
                 <label>
@@ -29,10 +31,15 @@
                 </label>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default login-send">Sign in</button>
+    </div>-->
+
+
+    <div class="form-login">
+        <div class="form-group login-btn">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default login-send">Sign in</button>
+            </div>
         </div>
+        <?php $user->gooleLogin() ?>
     </div>
 </form>

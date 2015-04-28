@@ -18,11 +18,14 @@ if($user->isLogin()){
 
 <div class="container">
     <div class="row">
-        <div class="form-wrap">
+        <div class="col-md-12">
+
+        <div class="form-wrap form-wrap-bg">
             <?php  require_once "Form/login.php"?>
-            <?php $user->gooleLogin() ?>
+
 
             </div>
+        </div>
     </div>
 
 <?php require_once 'template/footer.php'?>

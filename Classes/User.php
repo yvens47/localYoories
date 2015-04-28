@@ -139,7 +139,7 @@ class User extends Database
             $this->client->setAccessToken($_SESSION['token']);
 
 
-            echo "Logged in <a href='logout.php'>Logout</a>";
+            echo "Logged in <a href='logout.php' class='google-login'>Logout</a>";
 
 
 
