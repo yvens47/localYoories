@@ -18,6 +18,7 @@ $(document).ready(function () {
     })
 
     addtoWatchList();
+    subscriber();
 
 
 
@@ -28,6 +29,25 @@ window.onload = function(){
     showMore();
 }
 
+function subscriber(){
+    $(".panel-body").find('form').submit( function() {
+
+        $.ajax({
+            type: "POST",
+            url: "subscribe.php",
+            data: $(".panel-body form").serializeArray(),
+            success: function(data){
+                console.log(data);
+                alert(data);
+            },
+            error: function (error){}
+
+        })
+        $(this).find("input:first").val("");
+        return false
+
+    })
+}
 
 
 function infoStage(stage){

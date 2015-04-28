@@ -166,7 +166,7 @@ if(!$youtube->isVideoFound($id)){
                     </div>
                     <div class="panel-body">
 
-                        <form class="form-inline" method="post" action="subscribe.php">
+                        <form class="form-inline" method="post" action="subscribe.php" name="subscribe" class="subscribe-form">
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputEmail3">Email address</label>
                                 <input type="email"  name='email' class="form-control" id="subscribe" placeholder="Enter email">

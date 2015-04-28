@@ -41,7 +41,7 @@ class Subscriber {
              $sql = "INSERT INTO subscriber (id,email) VALUES (?,?)";
              $query = $this->db->query($sql, array(null, $this->email));
              if($query)
-                 echo "subscribed";
+                 echo "You have been subscribed successfully ";
          }
 
     }
