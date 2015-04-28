@@ -68,7 +68,7 @@ class User extends Database
     {
 
         $email = $this->connect()->escape_string($email);
-        $password = ($this->connect()->escape_string($password));
+        $password = md5($this->connect()->escape_string($password));
 
         $sql = "select email,password from login where email ='$email' And password='$password'";
 
@@ -76,7 +76,9 @@ class User extends Database
         $q = $this->query($sql);
 
         if ($q->num_rows > 0) {
+
             echo "sorry username is existed";
+
         } else {
             $sql = "insert into login VALUE (null,'$email', '$password')";
 
