@@ -343,8 +343,8 @@ class GoogleApi
 
         if(mysqli_num_rows($query)  == 0){
 
-             $none = array(" Nothing in your watchlists");
-            return $none;
+
+            return  0 ;
         }else if(mysqli_num_rows($query) == 1){
             return mysqli_fetch_assoc($query);
         }else{

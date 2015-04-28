@@ -108,9 +108,10 @@ if(!$youtube->isVideoFound($id)){
                                 <ul class="latest">
                                     <?php
                                         $watchlist = $youtube->viewWatchList();
-                                      if(count($watchlist) == 1){
-                                           echo $watchlist[0];
-                                      }
+                                     if($watchlist ==0 ){
+                                         echo " No Movie added to your watchlists yet";
+                                     }
+
                                     else
                                         if(is_array($watchlist) && count($watchlist) > 1 ):
                                             foreach($watchlist as $list): ?>
@@ -126,7 +127,27 @@ if(!$youtube->isVideoFound($id)){
 
                                       <?php endforeach      ?>
 
-                                        <?php endif  ?>
+                                        <?php else:  ?>
+                                            <?php
+                                            $movie = $watchlist['movie_id'] ;
+                                            $m = $youtube->features($movie);
+
+                                           ?>
+                                            <li>
+                                                <a href="video.php?id=<?php echo $m[0][0]; ?>">
+                                                    <img src="<?php echo $m[0][3]  ?>" alt="">
+                                                </a>
+
+                                                <p class="ltitle"> <?php echo $m[0][1] ?></p>
+                                                <i class="glyphicon glyphicon-remove-sign"></i>
+                                            </li>
+
+                                            <li>
+
+                                            </li>
+
+
+                                        <?php endif ?>
 
 
 
