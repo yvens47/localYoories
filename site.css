@@ -785,6 +785,11 @@ a.showles {
     padding: 2px 5px 5px 15px;
 }
 
+.copyright {
+    text-align: center;
+    color: #B8B5B5;
+}
+
 .subs {
     margin-bottom: 3px;
 }

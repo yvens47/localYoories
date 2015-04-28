@@ -6,12 +6,12 @@
     <div class="container">
 
 
-        <div class="navi col-md-2">
-            <h2 class="nav-title">Open</h2>
+        <div class="navi col-md-3">
+            <h2 class="nav-title">Share</h2>
             <ul class="nav-footer ">
-                <li role="presentation" class=""><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation" class=""><a href="#">Write Article</a></li>
+                <li role="presentation"><a href="#">Upload Photos</a></li>
+                <li role="presentation"><a href="#">Funny Haitian Videos</a></li>
             </ul>
         </div>
 
@@ -23,12 +23,11 @@
                 <li role="presentation"><a href="Articles.php?type=jokes">Short Jokes</a></li>
             </ul>
         </div>
-        <div class="navi col-md-4">
+        <div class="navi col-md-3">
             <h2 class="nav-title">Info</h2>
             <ul class="nav-footer">
-                <li role="presentation" class=""><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation" class=""><a href="#">About Us</a></li>
+
             </ul>
         </div>
 
@@ -52,7 +51,9 @@
 
 
 </div>
-<div class="copyright"></div>
+<div class="copyright">
+    <div class="container"> <p>&copy;opyright Yoories.com 2015</p></div>
+</div>
 </div>
 
 
