@@ -26,6 +26,7 @@ class Database {
     }
 
     function query($sql){
+         print_r($this->connect());
           $q = $this->connect()->query($sql) or die("unable to execute ");
           return $q;
     }

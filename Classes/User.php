@@ -71,7 +71,7 @@ class User extends Database
         $password = md5($this->connect()->escape_string($password));
 
         $sql = "select email,password from login where email ='$email' and password='$password'";
-        echo $sql;
+
 
         $q = $this->query($sql);
 
