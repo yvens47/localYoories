@@ -68,7 +68,7 @@ class User extends Database
     {
 
         $email = $this->connect()->escape_string($email);
-        $password = ($this->connect()->escape_string($password);
+        $password = ($this->connect()->escape_string($password));
 
         $sql = "select email,password from login where email ='$email' And password='$password'";
 
