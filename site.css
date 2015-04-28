@@ -789,7 +789,17 @@ a.showles {
     text-align: center;
     color: #B8B5B5;
 }
-
+.-footer-content {
+    background: white;
+    height: 45px;
+    padding: 10px 10px;
+    margin-top: 20px;
+}
+.recom-1 {
+    width: 48%;
+    float: left;
+    margin: 3px;
+}
 .subs {
     margin-bottom: 3px;
 }

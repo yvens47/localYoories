@@ -33,7 +33,7 @@
 
 
         <div class="navi nav-n col-md-3">
-            <h2 class="nav-title">Media</h2>
+
             <div class="-footer-content">
                 <div class="subs">
                     <input type="text" name="subscribe" id="subs" placeholder="email">

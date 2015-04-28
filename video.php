@@ -156,12 +156,25 @@ if(!$youtube->isVideoFound($id)){
                     </div>
 
                 </div>
-                <h2> Most Popular</h2>
+                <h2 style="
+    color: #51ADB3;
+    font-family: times;
+"> Most Popular</h2>
                 <div class=" recom">
-                    <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg">
-                    <p> a bunch of contents will be here here to describe this videos
+                    <div class="recom-1">
+                    <img class="" src="Images/mostPopular.jpg">
+                    <p> a bunch of  here to describe this videos
                         <a href="" class="btn btn-warning">Vierw </a>
                     </p>
+                        </div>
+
+                    <div class="recom-1">
+                        <img class="" src="Images/mostPopular.jpg">
+                        <p>  here here to describe this videos
+                            <a href="" class="btn btn-warning">Vierw </a>
+                        </p>
+                    </div>
+
 
                 </div>
 
