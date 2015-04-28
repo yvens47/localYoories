@@ -68,9 +68,9 @@ class User extends Database
     {
 
         $email = $this->connect()->escape_string($email);
-        $password = md5($this->connect()->escape_string($password));
+        $password = ($this->connect()->escape_string($password);
 
-        $sql = "select email,password from login where email ='$email' and password='$password'";
+        $sql = "select email,password from login where email ='$email' And password='$password'";
 
 
         $q = $this->query($sql);
