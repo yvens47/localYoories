@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f415c5-252f-4895-9899-0ed6fba2cf70" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/User.php" afterPath="$PROJECT_DIR$/Classes/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doRegister.php" afterPath="$PROJECT_DIR$/doRegister.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Yoories.iws" />
@@ -49,16 +50,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="555">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Form/login.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="750">
@@ -68,35 +59,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Classes/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125" vertical-offset="690" max-vertical-offset="2640">
-              <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.6" vertical-offset="705" max-vertical-offset="2625">
+              <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
               <folding>
-                <marker date="1430262529000" expanded="true" signature="1061:1127" placeholder="select * fro..login..." />
-                <marker date="1430262529000" expanded="true" signature="1921:2000" placeholder="select email..login..." />
-                <marker date="1430262529000" expanded="true" signature="2153:2205" placeholder="insert into ..." />
+                <marker date="1430262858000" expanded="true" signature="1057:1123" placeholder="select * fro..login..." />
+                <marker date="1430262858000" expanded="true" signature="1918:1997" placeholder="select email..login..." />
+                <marker date="1430262858000" expanded="true" signature="2169:2221" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/register.php">
+      <file leaf-file-name="doRegister.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doRegister.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6" vertical-offset="210" max-vertical-offset="735">
-              <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
+            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="315">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site.css">
+      <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/Database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3030" max-vertical-offset="13515">
-              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+            <state vertical-scroll-proportion="1.875" vertical-offset="45" max-vertical-offset="1200">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1429233558000" expanded="true" signature="669:707" placeholder="select * fro..posts..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.125" vertical-offset="210" max-vertical-offset="735">
+              <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -170,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Downloads/Yoories.sql" />
         <option value="$PROJECT_DIR$/Classes/Videos.php" />
         <option value="$PROJECT_DIR$/Classes/HowTo.php" />
         <option value="$PROJECT_DIR$/add.php" />
@@ -219,8 +221,9 @@
         <option value="$PROJECT_DIR$/site.js" />
         <option value="$PROJECT_DIR$/Classes/Subscriber.php" />
         <option value="$PROJECT_DIR$/video.php" />
-        <option value="$PROJECT_DIR$/Classes/User.php" />
         <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/doRegister.php" />
+        <option value="$PROJECT_DIR$/Classes/User.php" />
       </list>
     </option>
   </component>
@@ -583,7 +586,19 @@
       <option name="project" value="LOCAL" />
       <updated>1430262558429</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="fixing registration button&#10;">
+      <created>1430262634310</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1430262634310</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fixing registration buttons&#10;">
+      <created>1430262765186</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1430262765186</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -673,7 +688,9 @@
     <MESSAGE value="ajax subcribe" />
     <MESSAGE value=" new poster" />
     <MESSAGE value="fixing registration&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing registration&#10;" />
+    <MESSAGE value="fixing registration button&#10;" />
+    <MESSAGE value="fixing registration buttons&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing registration buttons&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -685,20 +702,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Marketplace/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="120">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.113851994" vertical-offset="0" max-vertical-offset="527">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="135">
@@ -1039,23 +1042,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/User.php">
+    <entry file="file://$PROJECT_DIR$/Classes/Database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125" vertical-offset="690" max-vertical-offset="2640">
-          <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
+        <state vertical-scroll-proportion="1.875" vertical-offset="45" max-vertical-offset="1200">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1430262529000" expanded="true" signature="1061:1127" placeholder="select * fro..login..." />
-            <marker date="1430262529000" expanded="true" signature="1921:2000" placeholder="select email..login..." />
-            <marker date="1430262529000" expanded="true" signature="2153:2205" placeholder="insert into ..." />
+            <marker date="1429233558000" expanded="true" signature="669:707" placeholder="select * fro..posts..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6" vertical-offset="210" max-vertical-offset="735">
+        <state vertical-scroll-proportion="-13.125" vertical-offset="210" max-vertical-offset="735">
           <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doRegister.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="315">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6" vertical-offset="705" max-vertical-offset="2625">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+          <folding>
+            <marker date="1430262858000" expanded="true" signature="1057:1123" placeholder="select * fro..login..." />
+            <marker date="1430262858000" expanded="true" signature="1918:1997" placeholder="select email..login..." />
+            <marker date="1430262858000" expanded="true" signature="2169:2221" placeholder="insert into ..." />
+          </folding>
         </state>
       </provider>
     </entry>

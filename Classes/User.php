@@ -33,15 +33,12 @@ class User extends Database
         $this->client->setScopes($scope);
     }
 
-    function login($email, $password)
-    {
-
-
+    function login($email, $password)   {
         $email = $this->connect()->escape_string($email);
         $password = md5($this->connect()->escape_string($password));
 
         $sql = "select * from login where email ='$email' and password='$password'";
-        echo $sql;
+
         $q = $this->query($sql);
 
         if ($q->num_rows > 0) {
@@ -74,6 +71,7 @@ class User extends Database
         $password = md5($this->connect()->escape_string($password));
 
         $sql = "select email,password from login where email ='$email' and password='$password'";
+        echo $sql;
 
         $q = $this->query($sql);
 

@@ -15,5 +15,6 @@ $password = $_POST['password'];
 
 $user = UserFactory::create();
 
+
 $user->register($email, $password);
 
