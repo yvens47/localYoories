@@ -25,6 +25,7 @@ $(document).ready(function () {
 window.onload = function(){
 
     infoStage("Beta");
+    showMore();
 }
 
 
@@ -161,4 +162,21 @@ function addtoWatchList(){
 
     })
 
+}
+
+
+function showMore(){
+    $(".p-desc").hide();
+     var innerDesc =  $(".p-desc").text().length;
+    var fulltext =  $(".p-desc").text();
+     var lenDisplay =  100;
+     var text = $(".p-desc").text().substring(0, 200);
+     console.log(innerDesc)
+    $(".p-desc").show().html(text);
+    $(".p-desc").append("<p><a href='' class='showmore'>show more</a></p>");
+
+    $(".showmore").click(function(e){
+        $(".p-desc").html(fulltext);
+        e.preventDefault()
+    })
 }

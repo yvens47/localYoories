@@ -748,6 +748,20 @@ ul.p-icons {
     padding: 3px 4px;
     box-shadow: 2px 1px 2px 1px #CBC9C9;
 }
+#subscribe {
+    width: 250px;
+}
+a.showles {
+    background: rgb(180, 184, 180);
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border-top: dashed 1px #eee;
+    font-size: 20px;
+}
 
 .latest li img {
     width: 80px;
@@ -756,6 +770,23 @@ ul.p-icons {
     padding: 3px 4px;
     border: solid #eee 1px;
     height: 55px;
+}
+
+.-footer-content img {
+    width: 20px;
+    margin: 10px 10px;
+    padding: 3px;
+}
+
+#subs {
+    width: 85%;
+    background: white;
+    border: solid 1px #eee;
+    padding: 2px 5px 5px 15px;
+}
+
+.subs {
+    margin-bottom: 3px;
 }
 @media screen and (max-width: 360px){
     .trends{

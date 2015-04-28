@@ -7,7 +7,7 @@
 
 
         <div class="navi col-md-2">
-            <h2 class="nav-title">Media</h2>
+            <h2 class="nav-title">Open</h2>
             <ul class="nav-footer ">
                 <li role="presentation" class=""><a href="#">Home</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
@@ -18,13 +18,13 @@
         <div class="navi col-md-2">
             <h2 class="nav-title">Articles</h2>
             <ul class="nav-footer ">
-                <li role="presentation" class=""><a href="#">How-tos</a></li>
-                <li role="presentation"><a href="#">Tips-tricks</a></li>
-                <li role="presentation"><a href="#">Short Jokes</a></li>
+                <li role="presentation" class=""><a href="Articles.php?type=how-to">How-tos</a></li>
+                <li role="presentation"><a href="Articles.php?type=tips">Tips-tricks</a></li>
+                <li role="presentation"><a href="Articles.php?type=jokes">Short Jokes</a></li>
             </ul>
         </div>
-        <div class="navi col-md-3">
-            <h2 class="nav-title">Media</h2>
+        <div class="navi col-md-4">
+            <h2 class="nav-title">Info</h2>
             <ul class="nav-footer">
                 <li role="presentation" class=""><a href="#">Home</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
@@ -33,9 +33,17 @@
         </div>
 
 
-        <div class="navi nav-n col-md-4">
+        <div class="navi nav-n col-md-3">
             <h2 class="nav-title">Media</h2>
             <div class="-footer-content">
+                <div class="subs">
+                    <input type="text" name="subscribe" id="subs" placeholder="email">
+                    <button type="submit"><i class="glyphicon glyphicon-envelope"></i> </button>
+                </div>
+                <img src="./Images/facebook55.png" alt="share haitian movies on facebook"/>
+                <img src="./Images/twitter36.png" alt="share haitian movies on facebook"/>
+                <img src="./Images/pinterest33.png" alt="pinit haitian movies on facebook"/>
+                <img src="./Images/rss22.png" alt="share haitian movies on facebook"/>
 
             </div>
         </div>

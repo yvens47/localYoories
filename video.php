@@ -51,7 +51,7 @@ if(!$youtube->isVideoFound($id)){
                          echo "does not have a description yet Please add A description for this video";
                     }else{
 
-                        echo $youtube->getDescription();
+                        echo "<p class='p-desc'>" . $youtube->getDescription()."</p>";
 
                     }
 
@@ -101,13 +101,17 @@ if(!$youtube->isVideoFound($id)){
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                <?php  $watchlist = $youtube->viewWatchList(); ?>
-                                <h3 class="panel-title">WatchLists  <span class=" pull-right label label-info">
+                                <h3 class="panel-title"> Your WatchLists  <span class=" pull-right label label-info">
                                         <?php echo sizeof($watchlist) ?></span> </h3>
                             </div>
                             <div class="panel-body">
                                 <ul class="latest">
                                     <?php
                                         $watchlist = $youtube->viewWatchList();
+                                      if(count($watchlist) == 1){
+                                           echo $watchlist[0];
+                                      }
+                                    else
                                         if(is_array($watchlist) && count($watchlist) > 1 ):
                                             foreach($watchlist as $list): ?>
                                               <?php   $movie = $youtube->features($list['movie_id']);    ?>
@@ -130,9 +134,26 @@ if(!$youtube->isVideoFound($id)){
                                 </ul>
 
                             </div>
-                            <div class="panel-footer">Google+ is Recommended</div>
+                            <div class="panel-footer"></div>
                         </div>
                         </div>
+
+                </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        Subscriber
+                    </div>
+                    <div class="panel-body">
+
+                        <form class="form-inline" method="post" action="subscribe.php">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email"  name='email' class="form-control" id="subscribe" placeholder="Enter email">
+                            </div>
+
+                            <button type="submit" class="btn btn-default">Sign in</button>
+                        </form>
+                    </div>
 
                 </div>
                 <h2> Most Popular</h2>
@@ -143,6 +164,8 @@ if(!$youtube->isVideoFound($id)){
                     </p>
 
                 </div>
+
+
 
 
 

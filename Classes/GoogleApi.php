@@ -337,11 +337,14 @@ class GoogleApi
     function viewWatchList(){
 
         $email = isset($_SESSION['email']) ? $_SESSION['email']: "fake@gmail.com";
+
         $sql = "SELECT movie_id FROM watchlist WHERE email ='$email'";
         $query = $this->db->query($sql);
 
         if(mysqli_num_rows($query)  == 0){
-            echo " You Have not added anything to watchlist Yet";
+
+             $none = array(" Nothing in your watchlists");
+            return $none;
         }else if(mysqli_num_rows($query) == 1){
             return mysqli_fetch_assoc($query);
         }else{

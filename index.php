@@ -51,18 +51,24 @@ $features = array_slice($data, 2,5);
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="Uploads/mortal.jpg" alt="...">
+                            <img src="Images/hatianMovie2.jpg" alt="free haitian movies">
                             <div class="carousel-caption">
                                 ...
                             </div>
                         </div>
                         <div class="item">
-                            <img src="http://yoories.com/pic2.png" alt="...">
+                            <img src="Images/HaitianMovie.jpg" alt="watch haitian movies">
                             <div class="carousel-caption">
                                 ...
                             </div>
                         </div>
-                        ...
+                        <div class="item">
+                            <img src="Images/freehaitianmovies.jpg" alt="watch haitian movies">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Controls -->
