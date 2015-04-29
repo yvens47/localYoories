@@ -140,7 +140,11 @@ class Articles {
         $sql = "select * from Category ";
         $query = $this->db->query($sql);
 
-        return  $query->fetch_all(MYSQL_ASSOC);
+        while($row = $query->fetch_assoc())
+                $rows = $row;
+
+
+        return $rows;
 
     }
 
