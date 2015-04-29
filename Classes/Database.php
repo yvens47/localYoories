@@ -38,7 +38,11 @@ class Database {
         $query = $this->query($sql);
 
         if($query->num_rows >= 1){
-            return $query->fetch_all(MYSQL_ASSOC);
+            while($row = $query->fetch_assoc()){
+                $rows = $row;
+            }
+
+            return $rows;
         }
         return 0;
 

@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4f415c5-252f-4895-9899-0ed6fba2cf70" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/11081457_10204667477019190_4089388156631497042_n.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/cousine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/facebook55.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/haitian3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/hatianMovie2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/maxresdefault (2).jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/pic_1202.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/rss22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/twitter36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Post/Add.php" afterPath="$PROJECT_DIR$/Post/Add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Articles.php" afterPath="$PROJECT_DIR$/Articles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/Articles.php" afterPath="$PROJECT_DIR$/Classes/Articles.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/Database.php" afterPath="$PROJECT_DIR$/Classes/Database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/ImageUpload.php" afterPath="$PROJECT_DIR$/Classes/ImageUpload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/Post.php" afterPath="$PROJECT_DIR$/Classes/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/User.php" afterPath="$PROJECT_DIR$/Classes/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add.php" afterPath="$PROJECT_DIR$/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/header.php" afterPath="$PROJECT_DIR$/template/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/sidebar.php" afterPath="$PROJECT_DIR$/template/sidebar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Yoories.iws" />
@@ -157,13 +135,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Classes/Database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875" vertical-offset="270" max-vertical-offset="1200">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.6" vertical-offset="270" max-vertical-offset="1260">
+              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
               <folding>
-                <marker date="1430281412000" expanded="true" signature="676:715" placeholder="select * fro..posts..." />
+                <marker date="1430283144000" expanded="true" signature="676:715" placeholder="select * fro..posts..." />
               </folding>
             </state>
           </provider>
@@ -179,10 +157,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62857145" vertical-offset="0" max-vertical-offset="525">
+            <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="465">
               <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding />
             </state>
@@ -253,7 +231,6 @@
         <option value="$PROJECT_DIR$/Classes/User.php" />
         <option value="$PROJECT_DIR$/Classes/ImageUpload.php" />
         <option value="$PROJECT_DIR$/add.php" />
-        <option value="$PROJECT_DIR$/Classes/Database.php" />
         <option value="$PROJECT_DIR$/template/header.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/register.php" />
@@ -263,6 +240,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Articles.php" />
         <option value="$PROJECT_DIR$/template/sidebar.php" />
+        <option value="$PROJECT_DIR$/Classes/Database.php" />
       </list>
     </option>
   </component>
@@ -673,7 +651,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430264076479</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fixing post problme">
+      <created>1430282810938</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1430282810938</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -740,7 +724,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add autoload&#10;" />
     <MESSAGE value="add user" />
     <MESSAGE value="adding overlay to images. in index.php&#10;" />
     <MESSAGE value="adding overlay to images. in index.php&#10;adding Post and Articcles Class" />
@@ -765,7 +748,8 @@
     <MESSAGE value="fixing registration&#10;" />
     <MESSAGE value="fixing registration button&#10;" />
     <MESSAGE value="fixing registration buttons&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing registration buttons&#10;" />
+    <MESSAGE value="fixing post problme" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing post problme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1080,16 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/Database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="270" max-vertical-offset="1200">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <marker date="1430281412000" expanded="true" signature="676:715" placeholder="select * fro..posts..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
@@ -1134,6 +1108,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75" vertical-offset="1905" max-vertical-offset="3165">
+          <caret line="146" column="65" selection-start-line="146" selection-start-column="65" selection-end-line="146" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1470">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="465">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Articles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.875" vertical-offset="1575" max-vertical-offset="3450">
@@ -1162,27 +1160,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Classes/Database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="1905" max-vertical-offset="3165">
-          <caret line="146" column="65" selection-start-line="146" selection-start-column="65" selection-end-line="146" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1470">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62857145" vertical-offset="0" max-vertical-offset="525">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.6" vertical-offset="270" max-vertical-offset="1260">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding>
+            <marker date="1430283144000" expanded="true" signature="676:715" placeholder="select * fro..posts..." />
+          </folding>
         </state>
       </provider>
     </entry>
