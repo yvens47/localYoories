@@ -13,3 +13,5 @@ spl_autoload_register(function($class){
         require  $dir.$class.".php";
     }
 });
+
+$user = new User();

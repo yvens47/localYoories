@@ -10,7 +10,7 @@ session_start();
 
 require_once "autoload.php";
 
-$user = new User();
+
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
