@@ -58,6 +58,7 @@
                     <?php  foreach($articles->categories() as $article) : ?>
                         <li><a href="Articles.php?type=<?php echo $article['CatID'] ?>"><?php echo $article['Name'] ?></a> </li>
                     <?php endforeach;  ?>
+                    <li><a href="add.php">Add</a></li>
                 </ul>
                 </li>
                 <li><a href="#contact">forum</a></li>
