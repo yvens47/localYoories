@@ -1,4 +1,4 @@
-<?php $user = new User(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +55,9 @@
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articles<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="Articles.php?type=how-to">How-tos</a></li>
-                    <li><a href="Articles.php?type=tips">Tips-Trics</a></li>
-                    <li><a href="Articles.php?type=jokes">Jokes</a></li>
-                    <li class="divider"></li>
-                    <li><a href="add.php">Add</a></li>
+                    <?php  foreach($articles->categories() as $article) : ?>
+                        <li><a href="Articles.php?type=<?php echo $article['CatID'] ?>"><?php echo $article['Name'] ?></a> </li>
+                    <?php endforeach;  ?>
                 </ul>
                 </li>
                 <li><a href="#contact">forum</a></li>

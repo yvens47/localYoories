@@ -144,10 +144,11 @@ $features = array_slice($data, 2,5);
                 <div class="filter-nav">
                     <p class="category">Articles</p>
                     <ul>
-            <?php foreach($articles->categories() as $category): ?>
+            <?php foreach($articles->categories() as $category):  ?>
 
-                    <li class="active "><a href="Articles.php?type=<?php echo $category['type'] ?>"><?php  echo $category['type'] ;?>
-                            <span class="badge"><?php echo $articles->countCats($category['type']) ?></span></a> </li>
+                    <li class="active "><a href="Articles.php?type=<?php echo $category['CatID'] ?>">
+                            <?php  echo $category['Name'] ;?>
+                            <span class="badge"><?php echo $articles->countCats($category['CatID']) ?></span></a> </li>
 
                 <?php endforeach ;?>
                     </ul>

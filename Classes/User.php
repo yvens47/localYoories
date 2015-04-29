@@ -16,6 +16,24 @@ class User extends Database
 
     private  $service ;
     private $client;
+    private $email;
+    private $password;
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
 
     function __construct()
     {
@@ -69,21 +87,13 @@ class User extends Database
 
         $email = $this->connect()->escape_string($email);
         $password = md5($this->connect()->escape_string($password));
-
         $sql = "select email,password from login where email ='$email' And password='$password'";
-
-
         $q = $this->query($sql);
-
         if ($q->num_rows > 0) {
-
-            echo "sorry username is existed";
-
+            echo "sorry username is taken";
         } else {
             $sql = "insert into login VALUE (null,'$email', '$password')";
-
-            $q = $this->query($sql);
-            if ($q) {
+            if ($this->query($sql)) {
                 header('location: login.php');
             }
 
@@ -92,16 +102,17 @@ class User extends Database
 
     }
 
+    function changePassword($email){
+
+    }
+
     function isLogin()
     {
 
         $login = false;
-
         if (isset($_SESSION['email'])) {
             $login = true;
         }
-
-
         return $login;
 
     }
@@ -118,9 +129,6 @@ class User extends Database
 
     function gooleLogin(){
 
-
-
-       // print_r($this->client);
         $google_auth = new Google_Auth_OAuth2($this->client);
         if (isset($_REQUEST['logout'])) {
             // Clear the access token from the session storage.

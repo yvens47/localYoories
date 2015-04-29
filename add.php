@@ -13,6 +13,9 @@ $videos = new Videos();
 
 $data  = ($videos->videoIds() );
 $pagination = new Pagination($data);
+$articles = new Articles(null);
+
+$categories = $articles->categories();
 
 ?>
 
@@ -38,6 +41,20 @@ $pagination = new Pagination($data);
                     <label for="inputPassword3" class="col-sm-2 control-label">Short-summary</label>
                     <div class="col-sm-10">
                         <textarea class="form-control" name="summary" placeholder="Summary"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                       <select name="category">
+                           <?php foreach($categories as $category): ?>
+                           <option value="<?php echo $category['Category'] ?>"><?php echo $category['Name'] ?></option>
+
+
+                        <?php endforeach; ?>
+                       </select>
+
                     </div>
                 </div>
 

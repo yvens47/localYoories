@@ -4,6 +4,7 @@
 session_start();
 require_once "autoload.php";
 $user = new User() ;
+$articles = new Articles(1);
 $page = new Page("Login");
 require_once 'template/header.php';
 

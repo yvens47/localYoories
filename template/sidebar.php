@@ -17,8 +17,8 @@
 
         <ul class="nav nav-pills nav-stacked">
             <?php foreach($articles->categories() as $category): ?>
-            <li class="active "><a href="?type=<?php echo $category['type'] ?>"><?php  echo $category['type'] ;?>
-                    <span class="badge pull-right"><?php echo $articles->countCats($category['type']) ?></span></a> </li>
+            <li class="active "><a href="?type=<?php echo $category['CatID'] ?>"><?php  echo $category['Name'] ;?>
+                    <span class="badge pull-right"><?php echo $articles->countCats($category['CatID']) ?></span></a> </li>
 
             <?php endforeach ;?>
         </ul>

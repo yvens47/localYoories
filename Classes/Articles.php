@@ -30,7 +30,7 @@ class Articles {
 
     {
         if($type == null){
-            $this->type ='articles';
+            $this->type =1;
         }
         $this->type = $type;
     }
@@ -114,21 +114,33 @@ class Articles {
     function displayArticles(){
 
         switch($this->getType()){
-            case "how-to":
+            case 1:
                $this->posts();
                 break;
-            case "jokes":
+            case 2:
                 $this->posts();
                 break;
-            case 'Tips':
+            case 3:
+                $this->posts();
+                break;
+            case 4:
                 $this->posts();
                 break;
             default:
-                $this->setType('articles');
+                $this->setType(1);
                 $this->posts();
                 break;
         }
 
+
+    }
+
+    function categories(){
+
+        $sql = "select * from Category ";
+        $query = $this->db->query($sql);
+
+        return  $query->fetch_all(MYSQL_ASSOC);
 
     }
 
@@ -164,7 +176,7 @@ class Articles {
 
     function countCats($cat){
 
-        $sql = "SELECT count(post_id) as num from posts as count where type='$cat'";
+        $sql = "SELECT count(catID) as num from posts  where catID='$cat'";
         $query = $this->db->query($sql);;
 
         return( mysqli_fetch_assoc($query)['num']);
@@ -181,9 +193,6 @@ class Articles {
     }
 
 
-    function  howTos(){
-
-    }
 
     function similar(){
         $type = $this->getType();
@@ -210,26 +219,25 @@ class Articles {
 
     }
 
-    function categories(){
-        $sql = "select distinct(type) from posts ";
-        $query = $this->db->query($sql);
 
-        while($row = mysqli_fetch_assoc($query)){
-            $rows [] = $row;
-        }
-         return ($rows);
-    }
 
     public function posts()
     {
 
         $data = ($this->db->all($this->type));
         // $data = $articles->displayArticles();
-        foreach ($data as $article) {
+
+        if($data == 0 ){
+            echo "no Post in this category yet";
+        }
+        else if (count($data) ==1)        {
+
+            $article = $data[0];
             $id = $article['post_id'];
             $title = $article['title'];
             $param = key($article);
             $body = substr($article['body'], 0, 100);
+
             echo "
                             <div class='p-wrap'>
                                <a href=\"article.php?post_id=$id\"><img  class='post-img' src='Uploads/thumb.jpg' /></a>
@@ -245,7 +253,33 @@ class Articles {
                                 </div>
                             </div>
                             ";
+
+        }else{
+            foreach ($data as $article) {
+                $id = $article['post_id'];
+                $title = $article['title'];
+                $param = key($article);
+                $body = substr($article['body'], 0, 100);
+                echo "
+                            <div class='p-wrap'>
+                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='Uploads/thumb.jpg' /></a>
+                                <div><h2><a href=\"article.php?post_id=$id\">$title</a></h2>
+                                <p> $body</p>
+                                </div>
+                                <div class='icns'>
+                                <i class='pull-right glyphicon glyphicon-thumbs-up'></i>
+                                <i class='pull-right glyphicon glyphicon-thumbs-down'></i>
+                                <i class='pull-right glyphicon glyphicon-share'></i>
+                                <i class='pull-right glyphicon glyphicon-bell'></i>
+                                <i class='pull-right glyphicon glyphicon-comment'></i>
+                                </div>
+                            </div>
+                            ";
+            }
         }
+
+
+
         $this->db->connect()->close();
     }
 

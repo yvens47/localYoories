@@ -10,15 +10,11 @@ require_once "autoload.php";
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
-
-$type = "posts";
-if(isset($_GET['type'])){
-
-    $type = $_GET['type'];
-}
-
-
+$user = new User();
+$type = 1;
+if(isset($_GET['type'])){$type = $_GET['type'];}
 $articles = new Articles($type);
+
 $data = ($videos->videoIds());
 $pagination = new Pagination($data);
 

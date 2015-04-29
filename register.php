@@ -2,7 +2,9 @@
 <?php
 
 require_once "autoload.php";
-$page = new Page("welcome");
+$page = new Page("Member Registration");
+ $user = new User();
+$articles = new Articles(1);
 require_once 'template/header.php';
 ?>
 
@@ -41,3 +43,5 @@ require_once 'template/header.php';
     </div>
 
 </div>
+
+<?php require_once 'template/footer.php'; ?>

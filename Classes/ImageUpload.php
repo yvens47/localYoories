@@ -13,7 +13,7 @@ class ImageUpload {
     private $type;
     private $size;
     private $tmp_name;
-    const MAX_SIZE = 80000;
+    const MAX_SIZE = 800000;
     private $error;
 
     public $extensiton = array('image/png','image/jpg','image/jpeg','image/gif');
@@ -134,10 +134,12 @@ class ImageUpload {
 
         if(!file_exists($dir.$this->getName())){
             if(move_uploaded_file($this->getTmpName(), $dir.$this->getName())){
-                echo "uploaded Successfully";
+
+                return  true ;
             }
         }
         else{
+
             die("file is exist");
         }
 

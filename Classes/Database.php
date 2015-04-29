@@ -34,17 +34,15 @@ class Database {
 
     function all($type){
 
-        $sql = "select * from posts where type='$type'";
-
-
+        $sql = "select * from posts where catID='$type'";
         $query = $this->query($sql);
-        if(mysqli_num_rows($query)> 0){
-            while($row = mysqli_fetch_assoc($query))
-                $rows[] = $row;
-            return $rows;
-        }else{
-            echo "not exist";
+
+        if($query->num_rows >= 1){
+            return $query->fetch_all(MYSQL_ASSOC);
         }
+        return 0;
+
+
 
 
     }

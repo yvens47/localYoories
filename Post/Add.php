@@ -11,7 +11,7 @@ $error = array('title'=> "Title cannot bet empty", "body"=>"Please go back and e
 require_once '../Config.php';
 
 
-
+print_r($_POST);
 if(isset($_POST)){
 
     if(empty($_POST['title'])){
@@ -24,13 +24,18 @@ if(isset($_POST)){
    else if(!empty($_FILES) ) {
 
         $post = new Post();
-        echo $_SERVER['DOCUMENT_ROOT'];
-        $p = array('title'=> $_POST['title'], 'body'=>$_POST['body'],"type"=>"articles" );
-        $post->add($p);
+        $p = array('title'=> $_POST['title'], 'body'=>$_POST['body'], 'category'=>$_POST['category']);
+
        $image = new ImageUpload($_FILES);
        if($image->checkSize()){
            if($image->checkExtension()){
-               $image->saveImage("Uploads");
+               if($image->saveImage("Uploads")){
+                   $post->add($p, $image->getName());
+               }
+               else{
+                   echo "We have some problem with your image";
+               }
+
            }
            else{
                die("extennsion doe not");
