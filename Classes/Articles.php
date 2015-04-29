@@ -141,9 +141,9 @@ class Articles {
         $query = $this->db->query($sql);
 
         while($row = $query->fetch_assoc())
-                $rows = $row;
+                $rows[] = $row;
 
-        print_r($rows);
+        //print_r($rows);
         return $rows;
 
     }

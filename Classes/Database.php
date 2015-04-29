@@ -39,7 +39,7 @@ class Database {
 
         if($query->num_rows >= 1){
             while($row = $query->fetch_assoc()){
-                $rows = $row;
+                $rows[] = $row;
             }
 
             return $rows;

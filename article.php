@@ -21,7 +21,7 @@ require_once "autoload.php";
 $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
-
+$user = new User();
 $articles = new Articles('');
 $data = ($videos->videoIds());
 $pagination = new Pagination($data);
