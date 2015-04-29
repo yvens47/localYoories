@@ -264,9 +264,10 @@ class Articles {
                 $title = $article['title'];
                 $param = key($article);
                 $body = substr($article['body'], 0, 100);
+                $image = $article['image_name'];
                 echo "
                             <div class='p-wrap'>
-                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='Uploads/thumb.jpg' /></a>
+                               <a href=\"article.php?post_id=$id\"><img  class='post-img' src='Uploads/{$image}' /></a>
                                 <div><h2><a href=\"article.php?post_id=$id\">$title</a></h2>
                                 <p> $body</p>
                                 </div>
