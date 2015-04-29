@@ -49,7 +49,7 @@ $categories = $articles->categories();
                     <div class="col-sm-10">
                        <select name="category">
                            <?php foreach($categories as $category): ?>
-                           <option value="<?php echo $category['Category'] ?>"><?php echo $category['Name'] ?></option>
+                           <option value="<?php echo $category['CatID'] ?>"><?php echo $category['Name'] ?></option>
 
 
                         <?php endforeach; ?>
