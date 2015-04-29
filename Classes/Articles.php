@@ -232,7 +232,7 @@ class Articles {
         // $data = $articles->displayArticles();
 
         if($data == 0 ){
-            echo "no Post in this category yet < a href=\" add.php\" class='btn btn-primary'>Post Article</a>";
+            echo "no Post in this category yet"." <a href=\"add.php\" class='btn btn-primary'>Post Article</a>";
         }
         else if (count($data) ==1)        {
 

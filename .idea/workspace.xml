@@ -76,8 +76,8 @@
       <file leaf-file-name="Articles.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Classes/Articles.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28" vertical-offset="1893" max-vertical-offset="2985">
-              <caret line="234" column="105" selection-start-line="234" selection-start-column="105" selection-end-line="234" selection-end-column="105" />
+            <state vertical-scroll-proportion="0.3942857" vertical-offset="1893" max-vertical-offset="2985">
+              <caret line="238" column="32" selection-start-line="238" selection-start-column="32" selection-end-line="238" selection-end-column="32" />
               <folding>
                 <element signature="n#getType#0;n#Articles#0;n#!!top" expanded="false" />
                 <element signature="n#article#0;n#Articles#0;n#!!top" expanded="false" />
@@ -85,22 +85,22 @@
                 <element signature="n#isArray#0;n#Articles#0;n#!!top" expanded="false" />
                 <element signature="n#displayArticles#0;n#Articles#0;n#!!top" expanded="false" />
                 <element signature="n#categories#0;n#Articles#0;n#!!top" expanded="false" />
-                <marker date="1430351136000" expanded="true" signature="866:879" placeholder="select * fro..." />
-                <marker date="1430351136000" expanded="true" signature="1342:1385" placeholder="select * fro..Comments..." />
-                <marker date="1430351136000" expanded="true" signature="2441:2463" placeholder="select * fro..Category..." />
-                <marker date="1430351136000" expanded="true" signature="2729:2783" placeholder="select ip fr..views..." />
-                <marker date="1430351136000" expanded="true" signature="2891:2934" placeholder="INSERT INTO ..." />
-                <marker date="1430351136000" expanded="true" signature="3033:3086" placeholder="SELECT count..views..." />
-                <marker date="1430351136000" expanded="true" signature="3328:3368" placeholder="select * fro..posts..." />
-                <marker date="1430351136000" expanded="true" signature="3511:3568" placeholder="SELECT count..posts..." />
-                <marker date="1430351136000" expanded="true" signature="3718:3757" placeholder="SELECT count..posts..." />
-                <marker date="1430351136000" expanded="true" signature="3978:4031" placeholder="select title..posts..." />
-                <marker date="1430351136000" expanded="true" signature="4930:5790" placeholder="..." />
-                <marker date="1430351136000" expanded="true" signature="5089:5229" placeholder="..." />
-                <marker date="1430351136000" expanded="true" signature="5280:5755" placeholder="..." />
-                <marker date="1430351136000" expanded="true" signature="6185:7044" placeholder="..." />
-                <marker date="1430351136000" expanded="true" signature="6343:6483" placeholder="..." />
-                <marker date="1430351136000" expanded="true" signature="6534:7009" placeholder="..." />
+                <marker date="1430351242000" expanded="true" signature="866:879" placeholder="select * fro..." />
+                <marker date="1430351242000" expanded="true" signature="1342:1385" placeholder="select * fro..Comments..." />
+                <marker date="1430351242000" expanded="true" signature="2441:2463" placeholder="select * fro..Category..." />
+                <marker date="1430351242000" expanded="true" signature="2729:2783" placeholder="select ip fr..views..." />
+                <marker date="1430351242000" expanded="true" signature="2891:2934" placeholder="INSERT INTO ..." />
+                <marker date="1430351242000" expanded="true" signature="3033:3086" placeholder="SELECT count..views..." />
+                <marker date="1430351242000" expanded="true" signature="3328:3368" placeholder="select * fro..posts..." />
+                <marker date="1430351242000" expanded="true" signature="3511:3568" placeholder="SELECT count..posts..." />
+                <marker date="1430351242000" expanded="true" signature="3718:3757" placeholder="SELECT count..posts..." />
+                <marker date="1430351242000" expanded="true" signature="3978:4031" placeholder="select title..posts..." />
+                <marker date="1430351242000" expanded="true" signature="4931:5791" placeholder="..." />
+                <marker date="1430351242000" expanded="true" signature="5090:5230" placeholder="..." />
+                <marker date="1430351242000" expanded="true" signature="5281:5756" placeholder="..." />
+                <marker date="1430351242000" expanded="true" signature="6186:7045" placeholder="..." />
+                <marker date="1430351242000" expanded="true" signature="6344:6484" placeholder="..." />
+                <marker date="1430351242000" expanded="true" signature="6535:7010" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -702,7 +702,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430351012386</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fixing post problme">
+      <created>1430351155191</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1430351155191</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1175,8 +1181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Articles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28" vertical-offset="1893" max-vertical-offset="2985">
-          <caret line="234" column="105" selection-start-line="234" selection-start-column="105" selection-end-line="234" selection-end-column="105" />
+        <state vertical-scroll-proportion="0.3942857" vertical-offset="1893" max-vertical-offset="2985">
+          <caret line="238" column="32" selection-start-line="238" selection-start-column="32" selection-end-line="238" selection-end-column="32" />
           <folding>
             <element signature="n#getType#0;n#Articles#0;n#!!top" expanded="false" />
             <element signature="n#article#0;n#Articles#0;n#!!top" expanded="false" />
@@ -1184,22 +1190,22 @@
             <element signature="n#isArray#0;n#Articles#0;n#!!top" expanded="false" />
             <element signature="n#displayArticles#0;n#Articles#0;n#!!top" expanded="false" />
             <element signature="n#categories#0;n#Articles#0;n#!!top" expanded="false" />
-            <marker date="1430351136000" expanded="true" signature="866:879" placeholder="select * fro..." />
-            <marker date="1430351136000" expanded="true" signature="1342:1385" placeholder="select * fro..Comments..." />
-            <marker date="1430351136000" expanded="true" signature="2441:2463" placeholder="select * fro..Category..." />
-            <marker date="1430351136000" expanded="true" signature="2729:2783" placeholder="select ip fr..views..." />
-            <marker date="1430351136000" expanded="true" signature="2891:2934" placeholder="INSERT INTO ..." />
-            <marker date="1430351136000" expanded="true" signature="3033:3086" placeholder="SELECT count..views..." />
-            <marker date="1430351136000" expanded="true" signature="3328:3368" placeholder="select * fro..posts..." />
-            <marker date="1430351136000" expanded="true" signature="3511:3568" placeholder="SELECT count..posts..." />
-            <marker date="1430351136000" expanded="true" signature="3718:3757" placeholder="SELECT count..posts..." />
-            <marker date="1430351136000" expanded="true" signature="3978:4031" placeholder="select title..posts..." />
-            <marker date="1430351136000" expanded="true" signature="4930:5790" placeholder="..." />
-            <marker date="1430351136000" expanded="true" signature="5089:5229" placeholder="..." />
-            <marker date="1430351136000" expanded="true" signature="5280:5755" placeholder="..." />
-            <marker date="1430351136000" expanded="true" signature="6185:7044" placeholder="..." />
-            <marker date="1430351136000" expanded="true" signature="6343:6483" placeholder="..." />
-            <marker date="1430351136000" expanded="true" signature="6534:7009" placeholder="..." />
+            <marker date="1430351242000" expanded="true" signature="866:879" placeholder="select * fro..." />
+            <marker date="1430351242000" expanded="true" signature="1342:1385" placeholder="select * fro..Comments..." />
+            <marker date="1430351242000" expanded="true" signature="2441:2463" placeholder="select * fro..Category..." />
+            <marker date="1430351242000" expanded="true" signature="2729:2783" placeholder="select ip fr..views..." />
+            <marker date="1430351242000" expanded="true" signature="2891:2934" placeholder="INSERT INTO ..." />
+            <marker date="1430351242000" expanded="true" signature="3033:3086" placeholder="SELECT count..views..." />
+            <marker date="1430351242000" expanded="true" signature="3328:3368" placeholder="select * fro..posts..." />
+            <marker date="1430351242000" expanded="true" signature="3511:3568" placeholder="SELECT count..posts..." />
+            <marker date="1430351242000" expanded="true" signature="3718:3757" placeholder="SELECT count..posts..." />
+            <marker date="1430351242000" expanded="true" signature="3978:4031" placeholder="select title..posts..." />
+            <marker date="1430351242000" expanded="true" signature="4931:5791" placeholder="..." />
+            <marker date="1430351242000" expanded="true" signature="5090:5230" placeholder="..." />
+            <marker date="1430351242000" expanded="true" signature="5281:5756" placeholder="..." />
+            <marker date="1430351242000" expanded="true" signature="6186:7045" placeholder="..." />
+            <marker date="1430351242000" expanded="true" signature="6344:6484" placeholder="..." />
+            <marker date="1430351242000" expanded="true" signature="6535:7010" placeholder="..." />
           </folding>
         </state>
       </provider>
