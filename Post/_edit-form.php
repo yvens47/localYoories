@@ -3,14 +3,14 @@
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Post id</label>
         <div class="col-sm-10">
-            <input type="text" readonly name="post_id" value="<?php echo $article['post_id'];?>">
+            <input type="text" readonly name="post_id" value="<?php echo ($post['post_id'])?>">
 
         </div>
     </div>
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
         <div class="col-sm-10">
-            <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title" value="<?php echo $article['title']  ?>">
+            <input type="text" name="title" class="form-control" id="inputEmail3" placeholder="title" value="<?php echo $post['title']  ?>">
         </div>
     </div>
     <div class="form-group">
@@ -24,7 +24,7 @@
         <label for="inputPassword3" class="col-sm-2 control-label">Content</label>
         <div class="col-sm-10">
             <textarea class="form-control" name="body" id='body' placeholder="click to write your article">
-                <?php  echo $article['body'] ;?>
+                <?php  echo  trim($post['body'] );?>
             </textarea>
         </div>
     </div>

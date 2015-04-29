@@ -11,7 +11,7 @@ $page = new Page("welcome");
 $youtube = new GoogleApi();
 $videos = new Videos();
 
-$type = 1;
+$type = 2;
 if(isset($_GET['type'])){$type = $_GET['type'];}
 $articles = new Articles($type);
 

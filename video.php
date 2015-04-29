@@ -13,6 +13,7 @@ require_once "autoload.php";
 $page = new Page("welcome");
 $id = $_GET['id'];
 echo empty($id);
+$articles = new Articles($type);
 
 if(empty($id)){
     header("location: index.php");

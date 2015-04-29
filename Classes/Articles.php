@@ -32,7 +32,7 @@ class Articles {
         if($type == null){
             $this->type =1;
         }
-        $this->type = $type;
+        $this->type = (int) $type;
     }
     private $db;
 

@@ -16,7 +16,7 @@ $youtube = new GoogleApi();
 //$videos = new Videos();
 
 $articles = new Articles('article');
-$article = $articles->edit($id);
+$post = $articles->edit($id);
 
 
 ?>
@@ -30,10 +30,13 @@ $article = $articles->edit($id);
 
         </div>
         <div class="col-md-9">
-            <h1>Add an Article</h1>
+
+            <h1> Edit</h1>
             <h2></h2>
             <?php require_once 'Post/_edit-form.php' ; ?>
 
         </div>
     </div>
 </div>
+
+<?php require_once 'template/footer.php' ?>

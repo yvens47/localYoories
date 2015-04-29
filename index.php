@@ -33,7 +33,8 @@ $features = array_slice($data, 2,5);
     <div class="container">
         <div class="alert  info alert-warning alert-dismissible fade in" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-            <p>We'd like to let you know That the Site is currently in <b>beta</b> stage. which means, some of the features might not work.
+            <p>We'd like to let you know That the Site is currently in
+                <b>beta</b> stage. which means, some of the features might not work properly.
                 Please be patient.
             </p>
         </div>
