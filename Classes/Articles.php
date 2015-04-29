@@ -143,7 +143,7 @@ class Articles {
         while($row = $query->fetch_assoc())
                 $rows = $row;
 
-
+        print_r($rows);
         return $rows;
 
     }
