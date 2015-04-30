@@ -37,7 +37,7 @@
     <div class="form-login">
         <div class="form-group login-btn">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default login-send">Sign in</button>
+                <button type="submit" class="btn btn-primary login-send">Sign in</button>
             </div>
         </div>
         <?php $user->gooleLogin() ?>

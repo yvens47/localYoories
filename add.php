@@ -82,3 +82,5 @@ $categories = $articles->categories();
         </div>
     </div>
 </div>
+
+<?php require_once "template/footer.php" ?>

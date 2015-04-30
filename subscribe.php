@@ -13,4 +13,8 @@ $email = $_POST['email'];
 
 $subs = new Subscriber($email);
 
+if(strlen($email) == 0 || empty($email)){
+    die(" please enter email address");
+}
+
 $subs->subscribe();

@@ -26,18 +26,20 @@ body{
     margin: 0 auto;
     margin-top: 10px;
     overflow: hidden;
+    padding: 10px 1px;
 }
-
 .form-wrap-bg{
 
 }
 
+
 .form-login {
-    background: #eee;
+    background: #C2CDD2;
     height: auto;
     overflow: hidden;
     position: relative;
     padding: 10px;
+    border-top: solid 4px #4087C5;
 }
 
 .form-login a {
@@ -732,9 +734,8 @@ ul.post-vid {
     text-align: center;
 }
 .p-icons i {
-    margin: 5px 15px 3px 1px;
+    margin: 1px 5px 3px 1px;
 }
-
 .filter-nav ul {
     list-style: none;
     padding: 0;
@@ -746,6 +747,15 @@ ul.post-vid {
 p.category {
     font-weight: bold;
     color: rgb(62, 96, 126);
+}
+
+.comment:hover {
+    color: #797676;
+    background: #F0EEEE;
+}
+
+.comment:nth-child(even) {
+    background: whitesmoke;
 }
 
 ul.post-vid li .title {

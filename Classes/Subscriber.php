@@ -32,6 +32,7 @@ class Subscriber {
         $this->email = $email;
     }
 
+
     function subscribe(){
         $sql = "select email from subscriber where email = ? ";
          $p =  $this->db->query($sql, $this->email);
