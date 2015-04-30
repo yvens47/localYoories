@@ -7,6 +7,8 @@
  */
 
 require_once "google/src/Google/autoload.php";
+require_once 'Zend/Loader.php';
+Zend_Loader::loadClass('Zend_Paginator');
 class GoogleLogin {
     private $client;
     private $service;
@@ -16,12 +18,6 @@ class GoogleLogin {
 
     function __construct(){
 
-        $this->client = new Google_Client();
-        $this->client->setApplicationName("Yoories");
-        $this->client->setDeveloperKey("AIzaSyD4UsaxhiSdIIPS6wsVcWkCRxNw4qRvz-c");
-        // parent::__construct($this->client);
-        $this->client->setClientId($this->clientId);
-        $this->client->setClientSecret($this->clientKey);
 
     }
 

@@ -44,10 +44,10 @@ class User extends Database
         $this->client->setClientId(CLIENT_ID);
         $this->client->setDeveloperKey(DEVELOPER_KEY);
         $this->client->setRedirectUri(REDIRECT);
-        $this->client->setApprovalPrompt('force');
+        //$this->client->setApprovalPrompt('force');
         $this->client->setApplicationName("Yoories");
 
-        $scope = array("https://www.googleapis.com/auth/userinfo.email","https://www.googleapis.com/auth/plus.me");
+        $scope = array("https://www.googleapis.com/auth/userinfo.email");
         $this->client->setScopes($scope);
     }
 
@@ -134,15 +134,25 @@ class User extends Database
             // Clear the access token from the session storage.
             unset($_SESSION['token']);
         }
-        if(isset($_GET['code'])){
-            $this->client->authenticate($_GET['code']);
-            $_SESSION['token'] = $this->client->getAccessToken();
-            //$this->client->refreshToken($_SESSION['token']);
+        try{
+            if(isset($_GET['code'])){
+                $this->client->authenticate($_GET['code']);
+                $_SESSION['token'] = $this->client->getAccessToken();
+               // $this->client->refreshToken($_SESSION['token']);
 
-            $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-            header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+
+
+                $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+                header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+
+            }
+
+        }catch (Google_Auth_Exception $e){
+
+            print_r($e->getMessage());
 
         }
+
 
         if(isset($_SESSION['token']) && $_SESSION['token']){
             $this->client->setAccessToken($_SESSION['token']);
@@ -163,9 +173,12 @@ class User extends Database
 
 
             $_SESSION['access_token'] = $this->client->getAccessToken();
-            $token_data = $this->client->verifyIdToken()->getAttributes();
+            $google_token= json_decode($_SESSION['access_token']);
+           // print_r($google_auth);
 
-            print_r($token_data);
+
+            $google = $this->client->refreshToken($google_token->access_token);
+
 
         }
 
