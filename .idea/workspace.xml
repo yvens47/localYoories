@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4f415c5-252f-4895-9899-0ed6fba2cf70" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Classes/conf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Post/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes/User.php" afterPath="$PROJECT_DIR$/Classes/User.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blank" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site.css" afterPath="$PROJECT_DIR$/site.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video.php" afterPath="$PROJECT_DIR$/video.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Yoories.iws" />
@@ -73,31 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/google/src/Google/autoload.php">
+      <file leaf-file-name="site.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9425287" vertical-offset="9003" max-vertical-offset="14190">
+              <caret line="633" column="13" selection-start-line="633" selection-start-column="13" selection-end-line="633" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-example.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/google/examples/user-example.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="2070">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19924098" vertical-offset="0" max-vertical-offset="2985">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="2985">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
               <folding>
                 <marker date="1430689395000" expanded="true" signature="1313:1379" placeholder="select * fro..login..." />
                 <marker date="1430689395000" expanded="true" signature="2173:2252" placeholder="select email..login..." />
@@ -119,14 +109,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/conf.php">
+      <file leaf-file-name="video.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state vertical-scroll-proportion="-20.625" vertical-offset="3015" max-vertical-offset="4530">
+              <caret line="234" column="33" selection-start-line="234" selection-start-column="33" selection-end-line="234" selection-end-column="33" />
               <folding>
-                <element signature="e#6#92#0#PHP" expanded="true" />
+                <element signature="e#488#512#0#HTML" expanded="true" />
+                <element signature="e#4675#4724#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blank" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blank">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2865">
+              <caret line="67" column="11" selection-start-line="67" selection-start-column="11" selection-end-line="174" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Post/Edit.php" />
         <option value="$PROJECT_DIR$/Admin/edit.php" />
         <option value="$PROJECT_DIR$/Post/update.php" />
         <option value="$PROJECT_DIR$/php.ini" />
@@ -183,18 +183,19 @@
         <option value="$PROJECT_DIR$/Post/_edit-form.php" />
         <option value="$PROJECT_DIR$/editArticle.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/video.php" />
         <option value="$PROJECT_DIR$/Classes/Subscriber.php" />
         <option value="$PROJECT_DIR$/subscribe.php" />
         <option value="$PROJECT_DIR$/Classes/Articles.php" />
         <option value="$PROJECT_DIR$/add.php" />
         <option value="$PROJECT_DIR$/Form/login.php" />
         <option value="$PROJECT_DIR$/register.php" />
-        <option value="$PROJECT_DIR$/site.css" />
         <option value="$PROJECT_DIR$/Classes/GoogleLogin.php" />
         <option value="$PROJECT_DIR$/Post/config.php" />
         <option value="$PROJECT_DIR$/Classes/conf.php" />
         <option value="$PROJECT_DIR$/Classes/User.php" />
+        <option value="$PROJECT_DIR$/blank" />
+        <option value="$PROJECT_DIR$/video.php" />
+        <option value="$PROJECT_DIR$/site.css" />
       </list>
     </option>
   </component>
@@ -276,7 +277,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="google" />
+              <option name="myItemId" value="Images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,7 +676,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430353524044</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="require probles">
+      <created>1430689475793</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1430689475793</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -702,6 +709,7 @@
     <frame x="1" y="23" width="1260" height="669" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -719,7 +727,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12305026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -742,7 +749,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="add user" />
     <MESSAGE value="adding overlay to images. in index.php&#10;" />
     <MESSAGE value="adding overlay to images. in index.php&#10;adding Post and Articcles Class" />
     <MESSAGE value="google api comment" />
@@ -767,7 +773,8 @@
     <MESSAGE value="fixing registration button&#10;" />
     <MESSAGE value="fixing registration buttons&#10;" />
     <MESSAGE value="fixing post problme" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing post problme" />
+    <MESSAGE value="require probles" />
+    <option name="LAST_COMMIT_MESSAGE" value="require probles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -779,13 +786,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Zend/Service/Yahoo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0857143" vertical-offset="570" max-vertical-offset="14070">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Zend/Oauth/Client.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="4755">
@@ -985,14 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/video.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="3345">
-          <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/Subscriber.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.75" vertical-offset="66" max-vertical-offset="825">
@@ -1052,14 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68311197" vertical-offset="90" max-vertical-offset="690">
           <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44101635" vertical-offset="11538" max-vertical-offset="13665">
-          <caret line="753" column="24" selection-start-line="753" selection-start-column="24" selection-end-line="753" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1142,14 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/google/examples/user-example.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="2070">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Post/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
@@ -1165,20 +1141,55 @@
         <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <element signature="e#6#92#0#PHP" expanded="true" />
+            <element signature="e#6#92#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19924098" vertical-offset="0" max-vertical-offset="2985">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="2985">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
             <marker date="1430689395000" expanded="true" signature="1313:1379" placeholder="select * fro..login..." />
             <marker date="1430689395000" expanded="true" signature="2173:2252" placeholder="select email..login..." />
             <marker date="1430689395000" expanded="true" signature="2401:2453" placeholder="insert into ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blank">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2865">
+          <caret line="67" column="11" selection-start-line="67" selection-start-column="11" selection-end-line="174" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/google/examples/user-example.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54285717" vertical-offset="0" max-vertical-offset="2070">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.625" vertical-offset="3015" max-vertical-offset="4530">
+          <caret line="234" column="33" selection-start-line="234" selection-start-column="33" selection-end-line="234" selection-end-column="33" />
+          <folding>
+            <element signature="e#488#512#0#HTML" expanded="true" />
+            <element signature="e#4675#4724#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9425287" vertical-offset="9003" max-vertical-offset="14190">
+          <caret line="633" column="13" selection-start-line="633" selection-start-column="13" selection-end-line="633" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
