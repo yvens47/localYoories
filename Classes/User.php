@@ -8,8 +8,9 @@
 
 
 require_once "Database.php";
-require_once './google/src/Google/autoload.php';
+//require_once './google/src/Google/autoload.php';
 require_once 'Credentials.php';
+require_once 'conf.php';
 
 class User extends Database
 {
