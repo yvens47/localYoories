@@ -8,6 +8,7 @@
 
 require_once 'PostImp.php';
 class Comment implements PostImp {
+
     private $id;
     private $title;
     private $body;
@@ -88,6 +89,7 @@ class Comment implements PostImp {
     }
 
     function createPost($id, $body){
+
         $comment = new Comment($id, $body);
         return $comment;
     }

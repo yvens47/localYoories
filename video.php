@@ -220,7 +220,7 @@ if(!$youtube->isVideoFound($id)){
 
                             <li>
                                 <img src="Images/cousine.png" alt="...">
-                                <p>   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <p>   Lorem Ipsum is simply dummy
                                 </p>
 
 

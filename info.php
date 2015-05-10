@@ -6,6 +6,3 @@
  * Time: 6:06 AM
  */
 
-
-echo date_default_timezone_get();
-phpinfo();

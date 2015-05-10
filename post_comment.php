@@ -38,6 +38,40 @@ print_r($query);
 
 
 
-}*/ ?>
+}*/
+
+session_start();
+require_once 'autoload.php';
+
+$user = new User();
+
+if(!$user->isLogin()){
+     echo " You need to login to post a comment";
+
+    exit;
+}
+?>
 
 <h1>sorry features has not added Yet </h1>
+
+<?php
+
+        var_dump($_POST);
+
+        if(isset($_POST['comment']) && isset($_POST['vidid'])){
+
+            $comment = $_POST['comment'];
+            $vidid = $_POST['vidid'];
+
+            $userid = $_SESSION['userid'];
+
+            $vidComment = new VidComment($vidid, $comment, $userid);
+
+            $vidComment->insert();
+
+        }
+
+
+
+
+?>

@@ -33,6 +33,7 @@ class Database {
     }
 
     function all($type){
+        $type = (int) $type;
 
         $sql = "select * from posts where catID='$type'";
         $query = $this->query($sql);
@@ -56,29 +57,16 @@ class Database {
 
 
         while ($rows = mysqli_fetch_assoc($query)) {
+
             $results[] = $rows;
 
 
         }
-return $results;
+        return $results;
 
 
     }
 
-    /**
-     * @param $query
-     * @return bool
-     */
-    public function isEmpty($query)
-    {
-        $isgreater = false;
-        if (mysqli_num_rows($query) > 0) {
-            $isgreater =true;
-        }
-
-
-        return $isgreater;
-    }
 
 
 }

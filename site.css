@@ -618,20 +618,26 @@ ul.item-content {
     list-style: none;
 }
 
-
 ul.item-content li {
     float: left;
-
     /* height: 170px; */
-    width: 25%;
+    width: 23%;
     height: auto;
     overflow: hidden;
+    text-align: center;
+    border: solid 1px #eee;
+    margin: 10px;
 }
-
 ul.item-content li img {
 
-    height:100%;
-    width: 95%;
+    /*height:100%;*/
+    width: 80%;
+    padding: 10px;
+
+}
+.item-content li p{
+    font-family: Arial, "Lucida Grande", "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+
 }
 #carousel-2 ul li {
     width: 18.2%;
