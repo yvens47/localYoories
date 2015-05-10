@@ -8,18 +8,21 @@
 
 
 require_once "Database.php";
-class VidComment {
 
-    private $id ;  // vidid
+class VidComment
+{
 
-    private $body ; // comment text
+    private $id;  // vidid
+
+    private $body; // comment text
 
     private $userid = null;
 
     private $db = null;
 
 
-    function __construct($id, $body, $userid){
+    function __construct($id, $body, $userid)
+    {
 
         $this->body = $body;
         $this->id = $id;
@@ -28,22 +31,20 @@ class VidComment {
         $this->db = new Database();
 
 
-
     }
 
-    function insert(){
-
-
+    function insert()
+    {
 
 
         $sql = "SELECT * from Yoories.vidComment WHERE userid ={$this->userid}";
-        echo $sql;
+
         $query = $this->db->query($sql);
-        if($query->num_rows >= 1){
+        if ($query->num_rows >= 1) {
 
             echo "you've already posted a comment for this video";
 
-        }else{
+        } else {
             $date = date('Y-m-d');
 
             echo $date;
@@ -52,21 +53,34 @@ class VidComment {
                     (null,'{$this->id}', '{$this->userid}','{$date}','{$this->body}')";
             $query = $this->db->query($sql);
 
-            if($query)
+            if ($query){
                 echo " your Comment has been added succesfully";
+
+                $this->db->connect()->close();
+            }
+
         }
-
-
 
 
     }
 
 
+    function comments(){
 
-    function  __toString(){
+        $sql = "select * from  Yoories.vidComment where vidId = 'eJLXtLrLhOc'";
+        $query = $this->db->query($sql);
+
+        $records = $this->db->assocResult($query);
+
+        print_r($records);
+    }
 
 
-        return  $this->id ." "." ".$this->body;
+    function  __toString()
+    {
+
+
+        return $this->id . " " . " " . $this->body;
 
     }
 

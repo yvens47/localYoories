@@ -52,15 +52,13 @@ if(!$user->isLogin()){
 }
 ?>
 
-<h1>sorry features has not added Yet </h1>
 
 <?php
 
-        var_dump($_POST);
 
         if(isset($_POST['comment']) && isset($_POST['vidid'])){
 
-            $comment = $_POST['comment'];
+            $comment = trim($_POST['comment']);
             $vidid = $_POST['vidid'];
 
             $userid = $_SESSION['userid'];

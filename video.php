@@ -20,6 +20,8 @@ if(empty($id)){
 }
 $youtube = new GoogleApi();
 
+$vidComment = new VidComment($id,null, null);
+
 if(!$youtube->isVideoFound($id)){
      header("location: index.php");
 }
@@ -262,7 +264,7 @@ if(!$youtube->isVideoFound($id)){
                 </div>
                 <div class="comment-icon pull-left"></div>
                 <div class="comment-box-wrap">
-                    <form method="post" action="post_comment.php">
+                    <form method="post" action="post_comment.php" class="post-comment">
                         <div class="form-group">
                             <!--<label for="exampleInputEmail1">Email address</label>-->
                             <input type="hidden" name="vidid"  value="<?php  echo $id ?>">
@@ -285,6 +287,8 @@ if(!$youtube->isVideoFound($id)){
             <?php
             $youtube->comments();
             ?>
+
+            <?php print_r($vidComment->comments()) ?>
         </div>
         <div class="col-md-4"></div>
 

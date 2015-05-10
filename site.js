@@ -23,6 +23,27 @@ $(document).ready(function () {
 
 
 });
+
+
+function postVidComment(){
+
+    console.log(window.location.pathname);
+    $(".post-comment").submit(function(e){
+        var formdata = ($(this).serialize())
+        $.ajax({
+            url: "post_comment.php",
+            type:"POST",
+            data: formdata,
+            success: function(data, error){
+                console.log(error);
+               alert(data);
+            }
+        })
+        e.preventDefault();
+    })
+}
+
+postVidComment();
 window.onload = function(){
 
     infoStage("Beta");
